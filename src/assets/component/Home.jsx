@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -65,7 +66,7 @@ const Home = () => {
                   Nền tảng mới
                 </p>
               </div>
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+              <h2 className="max-w-lg mb-6 font-sans text-5xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                 <span className="relative inline-block">
                   <svg
                     viewBox="0 0 52 24"
@@ -89,25 +90,32 @@ const Home = () => {
                       height="24"
                     />
                   </svg>
-                  <span className="relative">The</span>
+                  <span className="relative ">Nền</span>
                 </span>{" "}
-                quick, brown fox jumps over a lazy dog
+                tảng dạy kèm hiệu quả nhất.
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam, eaque ipsa quae.
+                Bạn cần gia sư hoặc muốn trở thành gia sư? StarHub là một nền tảng giúp bạn tiếp cận và hỗ trợ nhanh chóng.
               </p>
             </div>
             <div className="flex items-center sm:justify-center">
-              <Button className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md   focus:shadow-outline focus:outline-none" variant="outline">
-                Get started
-              </Button>
-              <Button
-                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide   text-white transition duration-200 rounded shadow-md   focus:shadow-outline focus:outline-none"
-                variant="outline"
-              >
-                Learn more
-              </Button>
+              <Link to="/about">
+                {" "}
+                <Button
+                  className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md   focus:shadow-outline focus:outline-none"
+                  variant="outline"
+                >
+                  Tìm hiểu
+                </Button>
+              </Link>
+              <Link to="/product">
+                <Button
+                  className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide   text-white transition duration-200 rounded shadow-md   focus:shadow-outline focus:outline-none"
+                  variant="outline"
+                >
+                  Tìm kiếm
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -131,7 +139,7 @@ const Home = () => {
                 </svg>
               </div>
               <p className="font-bold tracking-wide text-gray-800">
-                Make it better
+                Dễ dàng kết nối gia sư, tiết kiệm chi phí
               </p>
             </div>
             <div className="inline-block p-8 text-center">
@@ -151,7 +159,7 @@ const Home = () => {
                 </svg>
               </div>
               <p className="font-bold tracking-wide text-gray-800">
-                Do it faster
+                Tiết kiệm thời gian tiềm kiếm
               </p>
             </div>
             <div className="inline-block p-8 text-center">
@@ -171,7 +179,7 @@ const Home = () => {
                 </svg>
               </div>
               <p className="font-bold tracking-wide text-gray-800">
-                Working harder
+                Gia sư uy tín, chất lượng
               </p>
             </div>
           </div>
@@ -218,7 +226,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          What our customers think
+          Khách hàng nghĩ gì về chúng tôi?
         </motion.h2>
         <motion.p
           className="text-lg text-gray-500 mb-8"
@@ -226,7 +234,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+         
         </motion.p>
 
         <div className="flex items-start">

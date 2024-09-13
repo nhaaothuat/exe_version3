@@ -8,6 +8,7 @@ import DashBoard from "./assets/page/DashBoard";
 import Product from "./assets/page/Product";
 import Manage from "./assets/page/Manage";
 import About from "./assets/page/About";
+import Detail from "./assets/page/Detail";
 
 function App() {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ function App() {
         <Route path="/admin/manage" element={<Manage />} />
         {/* <Route path="signin" element={<SignIn />} /> */}
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/detail/:id" element={<Detail />} />
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product />} />
       </Routes>
