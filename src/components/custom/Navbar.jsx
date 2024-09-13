@@ -126,7 +126,7 @@ const Navbar = () => {
   return (
     <div
       className={`sticky top-0 z-50 py-4 mx-auto sm:px-6 md:px-8 lg:px-10 ${
-        isScrolled ? "bg-green-500" : "bg-white"
+        isScrolled ? "bg-[#DFF5FF]" : "bg-white"
       }`}
     >
       <div className="flex items-center justify-between">

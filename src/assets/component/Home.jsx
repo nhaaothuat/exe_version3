@@ -8,35 +8,35 @@ const testimonials = [
   {
     logo: "https://via.placeholder.com/80x40", // URL logo đầu tiên
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita sequi cupiditate harum repellendus ipsum dignissimos.",
-    name: "Jane Dodson",
-    title: "Marketing Director, Nike",
+      "Nhờ vào trang web tôi đã tìm được gia sư toán cho con mình, có đầy đủ thông tin của gia sư và tôi có thể yên tâm hơn cho con mình học, đây là trang web các phụ huynh có thể tham khảo.",
+    name: "Thanh Thảo",
+    title: "Giáo viên môn Toán",
   },
   {
     logo: "https://via.placeholder.com/80x40", // URL logo thứ hai
     quote:
-      "Doloribus voluptate explicabo labore? Assumenda tempore quibusdam dolore maxime cupiditate nisi.",
-    name: "John Doe",
-    title: "CEO, Adidas",
+      "Các đánh giá từ học viên khác mà tôi đã chọn được gia sư phù hợp với mình. Có nhiều lớp học phù hợp với thời gian của tôi. Trang web này phải gọi là chân ái của cuộc đờii.  ",
+    name: "Bảo Ngọc",
+    title: "Giáo viên môn Vật lý",
   },
   {
     logo: "https://via.placeholder.com/80x40", // URL logo thứ ba
     quote:
-      "Reprehenderit maiores eveniet voluptas voluptatum qui voluptatem culpa!",
-    name: "Alice Smith",
-    title: "CTO, Puma",
+      "Cảm ơn nền tảng đã kết nối với gia sư chất lượng, trong vòng 1 tháng tôi đã có thể cải thiện và học tốt được tiếng anh cơ bản nhờ sự tận tình của giảng viên.",
+    name: "Minh Nhật ",
+    title: "Giáo viên môn Hóa học",
   },
   {
     logo: "https://via.placeholder.com/80x40", // URL logo thứ tư
-    quote: "Illo debitis commodi placeat! Labore porro necessitatibus.",
-    name: "Robert Brown",
-    title: "CFO, Under Armour",
+    quote: "Tôi đã biết thêm được nhiều gia sư hơn và trang web đã giúp tôi có thể biết được tổng quát về chất lượng dạy của gia sư và có thể dễ dàng cân nhắc trong việc chọn được gia sư phù hợp cho mình.  ",
+    name: "Thanh Nhi",
+    title: "Giáo viên môn Văn",
   },
   {
     logo: "https://via.placeholder.com/80x40", // URL logo thứ năm
-    quote: "Explicabo voluptas autem non quod.",
-    name: "Mary Johnson",
-    title: "COO, Reebok",
+    quote: "Hay quá!!!!!.",
+    name: "Lê Ngọc ",
+    title: "Giáo viên môn Tiếng anh",
   },
 ];
 

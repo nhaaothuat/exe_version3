@@ -36,7 +36,9 @@ const Footer = () => {
             </p>
           </div>
         </div>
+
         <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+          
           <div>
             <p className="font-semibold tracking-wide text-teal-accent-400">
               Category
@@ -76,6 +78,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
           <div>
             <p className="font-semibold tracking-wide text-teal-accent-400">
               Cherry
@@ -123,6 +126,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+
           <div>
             <p className="font-semibold tracking-wide text-teal-accent-400">
               Apples
@@ -170,47 +175,14 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <p className="font-semibold tracking-wide text-teal-accent-400">
-              Business
-            </p>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a
-                  href="/"
-                  className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                >
-                  Infopreneur
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                >
-                  Personal
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                >
-                  Wiki
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                >
-                  Forum
-                </a>
-              </li>
-            </ul>
+
+
+          <div className="border-none overflow-hidden">
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61565847414624&tabs=timeline&width=600&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=834360898578517" width="600" height="300"  scrolling="no" frameBorder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
         </div>
       </div>
+
       <div className="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">
         <p className="text-sm text-black">
           © Copyright 2020 Lorem Inc. All rights reserved.
