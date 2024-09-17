@@ -118,7 +118,7 @@ const Home = () => {
               </Link>
               <Link to="/product">
                 <Button
-                  className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide   text-white transition duration-200 rounded shadow-md   focus:shadow-outline focus:outline-none"
+                  className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide   text-black transition duration-200 rounded shadow-md   focus:shadow-outline focus:outline-none"
                   variant="outline"
                 >
                   Tìm kiếm
