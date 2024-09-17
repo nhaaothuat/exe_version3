@@ -9,6 +9,8 @@ import Product from "./assets/page/Product";
 import Manage from "./assets/page/Manage";
 import About from "./assets/page/About";
 import Detail from "./assets/page/Detail";
+import Blog from "./assets/page/Blog";
+import Tutor from "./assets/page/Tutor";
 
 function App() {
   const navigate = useNavigate();
@@ -34,8 +36,11 @@ function App() {
         {/* <Route path="signin" element={<SignIn />} /> */}
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/detail/:id" element={<Detail />} />
+        {/* <Route path="/detail" element={<Detail />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/tutor" element={<Tutor />} />
       </Routes>
     </div>
   );

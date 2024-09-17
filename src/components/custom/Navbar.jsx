@@ -14,7 +14,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-    handleScroll()
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -40,6 +40,15 @@ const Navbar = () => {
               Manage Users
             </Link>
           </li>
+
+          <li>
+            <Link
+              to="/blog"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Blog
+            </Link>
+          </li>
           <li>
             <a
               href="/admin/settings"
@@ -59,14 +68,11 @@ const Navbar = () => {
         <li>
           <Link
             to="/"
-           
             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
           >
             Trang chủ
           </Link>
         </li>
-
-       
 
         <li>
           <Link
@@ -79,35 +85,33 @@ const Navbar = () => {
           </Link>
         </li>
 
-        <li>
-          <a
-            href="/"
-            aria-label="Features"
-            title="Features"
-            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-          >
-            Tìm trung tâm
-          </a>
-        </li>
+       
 
         <li>
-          <a
-            href="/"
-            aria-label="Product pricing"
-            title="Product pricing"
+          <Link
+            to="/tutor"
+           
             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
           >
             Gia sư
-          </a>
+          </Link>
         </li>
 
         <li>
           <Link
             to="/about"
-         
             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
           >
             Về chúng tôi
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="/blog"
+            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+          >
+            Tin tức
           </Link>
         </li>
 
@@ -131,7 +135,7 @@ const Navbar = () => {
     >
       <div className="flex items-center justify-between">
         <Link to="/" className="inline-flex items-center">
-          <img src="/logo2.png" className="h-14 w-14"/>
+          <img src="/logo2.png" className="h-14 w-14" />
         </Link>
 
         <ul className="hidden space-x-8 lg:flex">{renderMenuItems()}</ul>
@@ -179,12 +183,8 @@ const Navbar = () => {
             <div className="absolute top-0 left-0 w-full bg-white border rounded shadow-sm">
               <div className="p-5">
                 <div className="flex items-center justify-between mb-4">
-                  <Link
-                    to="/"
-                    
-                    className="inline-flex items-center"
-                  >
-                   <img src="/logo2.png" className="h-14 w-14"/>
+                  <Link to="/" className="inline-flex items-center">
+                    <img src="/logo2.png" className="h-14 w-14" />
                   </Link>
                   <button
                     aria-label="Close Menu"
