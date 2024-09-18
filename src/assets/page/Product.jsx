@@ -6,110 +6,96 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Product = () => {
-  // const [product, setProduct] = useState(null);
-  // const [isLoading, setIsLoading] = useState(true);
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       "https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/api/Tutor"
-  //     )
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setProduct(res.data);
-  //       setIsLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setIsLoading(false);
-  //     });
-  // }, []);
+  const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    axios
+      .get(
+        "https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/api/Tutor"
+      )
+      .then((res) => {
+        console.log(res.data);
+        setProduct(res.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <div className="App">
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loading />
-      ) : ( */}
-      <div className="container px-5 py-24 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* {product.map((product, index) => ( */}
-          <Link
-            // key={index}
-            // to={`/detail/${product.id}`}
-            to={`/detail/:id`}
-            className="relative overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
-          >
-            <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
+      ) : (
+        <div className="container px-5 py-24 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {product.map((product, index) => (
+              <Link
+                key={index}
+                to={`/detail/${product.id}`}
+                // to={`/detail/:id`}
+                className="relative overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+              >
+                <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
 
-            <div className="sm:flex sm:justify-between sm:gap-4">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
-                  {/* {product.fullName} */} Xuân Hiển
-                </h3>
+                <div className="sm:flex sm:justify-between sm:gap-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+                      {product.fullName}
+                    </h3>
 
-                <p className="mt-1 text-xs font-medium text-gray-600">
-                  {/* {product.teachingArea}  */}Quy Nhơn
-                </p>
-              </div>
+                    <p className="mt-1 text-xs font-medium text-gray-600">
+                      {product.teachingArea}
+                    </p>
+                  </div>
 
-              <div className="hidden sm:block sm:shrink-0">
-                <img
-                  alt=""
-                  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                  className="size-16 rounded-lg object-cover shadow-sm"
-                />
-              </div>
-            </div>
+                  <div className="hidden sm:block sm:shrink-0">
+                    <img
+                      alt=""
+                      src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                      className="size-16 rounded-lg object-cover shadow-sm"
+                    />
+                  </div>
+                </div>
 
-            <div className="mt-4">
-              <ul className="flex gap-2">
-                {/* {product.mainSubjects.map((subject) => (
-                      <li key={subject.id}>{subject.name}</li>
-                    ))} */}
-                <li>
-                  <Button variant="outline">Toán</Button>{" "}
-                </li>
-                <li>
-                  <Button variant="outline">Toán</Button>{" "}
-                </li>
-                <li>
-                  <Button variant="outline">Toán</Button>{" "}
-                </li>
-              </ul>
-            </div>
-
-            <dl className="mt-6 flex gap-4 sm:gap-6 justify-between">
-              <div className="flex flex-col-reverse">
-                <Button variant="secondary">
-                  <dd className="text-xs text-gray-500">
-                    {/* {numeral(product.tuitionFee).format("0,0")} */}
-                    200000 VNĐ/buổi
-                  </dd>
-                </Button>
-              </div>
-
-              <div className="flex flex-col ">
-                <dd className="text-xs text-gray-500">
+                <div className="mt-4">
                   <ul className="flex gap-2">
-                    {/* {product.formOfWorks.map((subject) => (
-                          <li key={subject.id} className="">
-                            {subject.form}
-                          </li>
-                        ))} */}
-                    <li>
-                      <Button variant="outline">Online</Button>
-                    </li>
-                    <li>
-                      <Button variant="outline">Offline</Button>
-                    </li>
+                    {product.mainSubjects.map((subject) => (
+                      <li key={subject.id}>
+                        <Button variant="outline">{subject.name}</Button>
+                      </li>
+                    ))}
                   </ul>
-                </dd>
-              </div>
-            </dl>
-          </Link>
-          {/* ))} */}
+                </div>
+
+                <dl className="mt-6 flex gap-4 sm:gap-6 justify-between">
+                  <div className="flex flex-col-reverse">
+                    <Button variant="secondary">
+                      <dd className="text-xs text-gray-500">
+                        {numeral(product.tuitionFee).format("0,0")}
+                      </dd>
+                    </Button>
+                  </div>
+
+                  <div className="flex flex-col ">
+                    <dd className="text-xs text-gray-500">
+                      <ul className="flex gap-2">
+                        {product.formOfWorks.map((subject) => (
+                          <li key={subject.id} className="">
+                            <Button variant="outline">{subject.form}</Button>
+                          </li>
+                        ))}
+                      </ul>
+                    </dd>
+                  </div>
+                </dl>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-      {/* )} */}
+      )}
     </div>
   );
 };
