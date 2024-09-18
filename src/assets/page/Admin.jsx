@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { v4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { data, imgDB } from "../../utility/firebase.js";
+import { data, imgDB } from "../../../src/utility/firebase.js";
 import {
   Select,
   SelectContent,
