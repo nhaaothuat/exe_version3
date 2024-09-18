@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { v4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { data, imgDB } from "../../utility/firebase";
+import { data, imgDB } from "../../utility/firebase.js";
 import {
   Select,
   SelectContent,
@@ -22,8 +22,8 @@ const Admin = () => {
   const contentRef = useRef(null);
 
   // State for form fields and loading
-  const [image, setImage] = useState(""); 
-  const [imageFile, setImageFile] = useState(null); 
+  const [image, setImage] = useState("");
+  const [imageFile, setImageFile] = useState(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [theme, setTheme] = useState("");
@@ -36,14 +36,14 @@ const Admin = () => {
       const reader = new FileReader();
       reader.onload = () => setImage(reader.result); // Preview image
       setImageFile(file);
-      reader.readAsDataURL(file); 
+      reader.readAsDataURL(file);
     }
-    return file
+    return file;
   };
 
   // Upload image to Firebase Storage
   const uploadImageToFirebase = async () => {
-    if (!imageFile) return null; 
+    if (!imageFile) return null;
     const imageRef = ref(imgDB, `Img/${v4()}`);
     const snapshot = await uploadBytes(imageRef, imageFile);
     return getDownloadURL(snapshot.ref);
@@ -80,8 +80,6 @@ const Admin = () => {
       setImageFile(null);
       setTheme("");
 
-      
-      
       // Success message
       toast.success("Post created successfully!");
     } catch (error) {
@@ -129,7 +127,7 @@ const Admin = () => {
 
         {/* Theme Selection */}
         <div className="">
-          <Select onValueChange={setTheme}>
+          <Select onValueChange={setTheme} value={theme}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Người tạo" />
             </SelectTrigger>
@@ -146,7 +144,7 @@ const Admin = () => {
         {/* Featured Image */}
         <div className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="picture">Picture</Label>
-          <Input id="picture" type="file" onChange={handleImageChange} />
+          <Input id="picture" type="file" onChange={handleImageChange}/>
           {image && (
             <div className="mt-4">
               <p className="text-sm text-gray-500 mb-2">Preview:</p>
@@ -168,7 +166,11 @@ const Admin = () => {
               `}
             disabled={isLoading}
           >
-            {isLoading ? <AiOutlineLoading className="animate-spin text-2xl mx-auto" /> : "Gửi đi"}
+            {isLoading ? (
+              <AiOutlineLoading className="animate-spin text-2xl mx-auto" />
+            ) : (
+              "Gửi đi"
+            )}
           </button>
           <ToastContainer />
         </div>

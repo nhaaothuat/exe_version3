@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import img from "/contact.jpg";
 import { doc, setDoc } from "firebase/firestore";
 import { data } from "../../utility/firebase.js";
@@ -23,7 +23,7 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const contactData = {
         name,
@@ -47,6 +47,8 @@ const ContactPage = () => {
       toast.error("Error occurred while submitting the post.");
       console.log(error);
       setLoading(false);
+    } finally {
+      setLoading(false); // Đảm bảo đặt lại loading về false
     }
   };
 
@@ -222,12 +224,14 @@ const ContactPage = () => {
                 placeholder="Họ và tên"
                 className="border p-2 rounded w-full"
                 onChange={(e) => setName(e.target.value)}
+                value={name}
               />
               <input
                 type="text"
                 placeholder="Email"
                 className="border p-2 rounded w-full"
                 onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
             </div>
             <input
@@ -235,20 +239,24 @@ const ContactPage = () => {
               placeholder="Môn học"
               className="border p-2 rounded w-full mt-4"
               onChange={(e) => setSubject(e.target.value)}
+              value={subject}
             />
             <input
               type="text"
               placeholder="Số điện thoại"
               className="border p-2 rounded w-full mt-4"
               onChange={(e) => setPhone(e.target.value)}
+              value={phone}
             />
             <textarea
-              className="border p-2 rounded w-full mt-4"
+              className="border p-2 rounded w-full   mt-4"
               rows="5"
               placeholder="Nhập tin nhắn ở đây"
               onChange={(e) => setMess(e.target.value)}
+              value={mess}  
+              disabled={loading}
             ></textarea>
-            <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4 hover:bg-blue-600 transition-all">
+            <button disabled={loading} className="bg-blue-500 text-white py-2 px-4 rounded mt-4 hover:bg-blue-600 transition-all">
               {loading ? (
                 <AiOutlineLoading className="animate-spin text-2xl mx-auto" />
               ) : (
