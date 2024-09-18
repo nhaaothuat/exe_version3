@@ -1,6 +1,55 @@
-import React from "react";
-import img from "../../../public/contact.jpg";
+import React, { useEffect, useState } from "react";
+import img from "/contact.jpg";
+import { doc, setDoc } from "firebase/firestore";
+import { data } from "../../utility/firebase";
+import { v4 } from "uuid";
+
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
+import { AiOutlineLoading } from "react-icons/ai";
+
 const ContactPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [phone, setPhone] = useState("");
+  const [mess, setMess] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const saveContactToFirestore = async (contactData) => {
+    const contactId = v4();
+    await setDoc(doc(data, "contacts", contactId), contactData);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const contactData = {
+        name,
+        email,
+        subject,
+        phone,
+        mess,
+        createdAt: new Date(),
+      };
+
+      await saveContactToFirestore(contactData);
+
+      setName("");
+      setEmail("");
+      setSubject("");
+      setPhone("");
+      setMess("");
+
+      toast.success("Post created successfully!");
+    } catch (error) {
+      toast.error("Error occurred while submitting the post.");
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       {/* Banner */}
@@ -162,35 +211,51 @@ const ContactPage = () => {
 
       <section className="contact mb-10">
         <div className="container mx-auto px-4 py-8">
-          <form className="bg-white shadow-lg rounded-lg p-6 md:p-8">
-            <h4 className="text-lg md:text-xl font-semibold mb-4">
-              LIÊN HỆ
-            </h4>
+          <form
+            className="bg-white shadow-lg rounded-lg p-6 md:p-8"
+            onSubmit={handleSubmit}
+          >
+            <h4 className="text-lg md:text-xl font-semibold mb-4">LIÊN HỆ</h4>
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"
                 placeholder="Họ và tên"
                 className="border p-2 rounded w-full"
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Email"
                 className="border p-2 rounded w-full"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <input
               type="text"
               placeholder="Môn học"
               className="border p-2 rounded w-full mt-4"
+              onChange={(e) => setSubject(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Số điện thoại"
+              className="border p-2 rounded w-full mt-4"
+              onChange={(e) => setPhone(e.target.value)}
             />
             <textarea
               className="border p-2 rounded w-full mt-4"
               rows="5"
               placeholder="Nhập tin nhắn ở đây"
+              onChange={(e) => setMess(e.target.value)}
             ></textarea>
             <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4 hover:bg-blue-600 transition-all">
-              Gửi đi
+              {loading ? (
+                <AiOutlineLoading className="animate-spin text-2xl mx-auto" />
+              ) : (
+                "Gửi đi"
+              )}
             </button>
+            <ToastContainer />
           </form>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import test from "../../../public/test.jpg";
+import test from "/test.jpg";
 const list_blog = [
   {
     id: 1,

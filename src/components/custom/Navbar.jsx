@@ -26,10 +26,18 @@ const Navbar = () => {
         <>
           <li>
             <Link
+              to="/admin"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Admin Settings
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/admin/dashboard"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-              Dashboard
+              Quản lí gia sư
             </Link>
           </li>
           <li>
@@ -37,7 +45,7 @@ const Navbar = () => {
               to="/admin/manage"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-              Manage Users
+              Quản lí liên hệ 
             </Link>
           </li>
 
@@ -48,16 +56,6 @@ const Navbar = () => {
             >
               Blog
             </Link>
-          </li>
-          <li>
-            <a
-              href="/admin/settings"
-              aria-label="Admin Settings"
-              title="Admin Settings"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Admin Settings
-            </a>
           </li>
         </>
       );
@@ -85,12 +83,9 @@ const Navbar = () => {
           </Link>
         </li>
 
-       
-
         <li>
           <Link
             to="/tutor"
-           
             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
           >
             Gia sư

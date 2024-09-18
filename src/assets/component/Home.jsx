@@ -7,7 +7,7 @@ import SubjectCard from "../page/SubjectCard";
 import TeamSection from "../page/TeamSection";
 import { FaPlay } from "react-icons/fa6";
 import { SlideRight } from "../../utility/animation";
-import test from "../../../public/test.jpg";
+import test from "/test.jpg";
 const testimonials = [
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/6/68/Logo_FPT_Education.png", // URL logo đầu tiên
