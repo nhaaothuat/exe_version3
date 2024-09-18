@@ -5,29 +5,29 @@ import { useParams } from "react-router-dom";
 import numeral from "numeral";
 
 const Detail = () => {
-  // const { id } = useParams();
-  // const [product, setProduct] = useState(null);
-  // const [isLoading, setIsLoading] = useState(true);
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/api/Tutor/${id}`
-  //     )
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setProduct(res.data);
-  //       setIsLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setIsLoading(false);
-  //     });
-  // }, [id]);
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    axios
+      .get(
+        `https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/api/Tutor/${id}`
+      )
+      .then((res) => {
+        console.log(res.data);
+        setProduct(res.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
+  }, [id]);
   return (
     <div>
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loading />
-      ) : ( */}
+      ) : (
         <div className="font-sans bg-white">
           <div className="p-4 lg:max-w-7xl max-w-4xl mx-auto">
             <div className="grid items-start grid-cols-1 lg:grid-cols-5 gap-12 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-6 rounded-lg">
@@ -58,7 +58,7 @@ const Detail = () => {
 
               <div className="lg:col-span-2">
                 <h2 className="text-2xl font-extrabold text-gray-800">
-                  {/* {product.fullName}  */}Xuân Hiển
+                  {product.fullName} 
                 </h2>
 
                 {/* <div className="flex space-x-2 mt-4">
@@ -107,46 +107,46 @@ const Detail = () => {
 
                 <div className="flex flex-wrap gap-4 mt-8">
                   <p className="text-gray-800 text-3xl font-bold">
-                    {/* {numeral(product.tuitionFee).format("0,0")}  */}
-                  200000  VNĐ/buổi
+                    {numeral(product.tuitionFee).format("0,0")} 
+                  
                   </p>
                 </div>
 
-                {/* {product.mainSubjects.length > 0 && ( */}
+                {product.mainSubjects.length > 0 && (
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-gray-800">
                       Môn học:
                     </h3>
                     <div className="flex flex-wrap gap-3 mt-4">
-                      {/* {product.mainSubjects.map((subject, index) => ( */}
+                      {product.mainSubjects.map((subject, index) => (
                         <button
-                          // key={index}
+                          key={index}
                           className="w-full sm:w-auto min-w-[200px] px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded text-center"
                         >
-                          {/* {subject.name && subject.name.trim()} */} Toán
+                          {subject.name && subject.name.trim()} 
                         </button>
-                      {/* ))} */}
+                       ))}
                     </div>
                   </div>
-                {/* )} */}
+                 )} 
 
-                {/* {product.formOfWorks.length > 0 && ( */}
+                {product.formOfWorks.length > 0 && (
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-gray-800 mb-4">
                       Hình thức dạy học:
                     </h3>
                     <div className="flex flex-wrap gap-4 justify-start sm:flex-row flex-col">
-                      {/* {product.formOfWorks.map((subject) => ( */}
+                      {product.formOfWorks.map((subject) => (
                         <button
-                          // key={subject.id}
+                          key={subject.id}
                           className="w-full sm:w-auto min-w-[200px] px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded text-center"
                         >
-                          {/* {subject.form && subject.form.trim()} */}Online
+                          {subject.form && subject.form.trim()}
                         </button>
-                      {/* ))} */}
+                       ))} 
                     </div>
                   </div>
-                {/* )} */}
+                )} 
               </div>
             </div>
 
@@ -157,22 +157,22 @@ const Detail = () => {
               <ul className="mt-4 space-y-6 text-gray-800">
                 <li className="text-sm">
                   Giáo dục{" "}
-                  <span className="ml-4 float-right">FPT Quy Nhơn</span>
-                  {/* {product.education} */}
+                  <span className="ml-4 float-right">{product.education}</span>
+                  {/*  */}
                 </li>
                 <li className="text-sm">
                   Kinh nghiệm{" "}
-                  <span className="ml-4 float-right">5 năm kinh nghiệm</span>
-                  {/* {product.experience} */}
+                  <span className="ml-4 float-right">{product.experience}</span>
+                  {/*  */}
                 </li>
                 <li className="text-sm">
                   Quê quán{" "}
-                  <span className="ml-4 float-right">Quy Nhơn</span>
+                  <span className="ml-4 float-right">{product.hometown}</span>
                   {/* {product.hometown} */}
                 </li>
                 <li className="text-sm">
                   Nơi ở hiện tại{" "}
-                  <span className="ml-4 float-right">Quy Nhơn</span>
+                  <span className="ml-4 float-right">{product.livingAt}</span>
                   {/* {product.livingAt} */}
                 </li>
                 {/* <li className="text-sm">
@@ -201,7 +201,7 @@ const Detail = () => {
             </div>
           </div>
         </div>
-      {/* )} */}
+       )} 
     </div>
   );
 };
