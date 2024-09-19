@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { data } from "../../utility/firebase";
 import {
   Table,
   TableBody,
-  TableCaption,
+  
   TableCell,
   TableHead,
   TableHeader,
@@ -20,8 +20,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
+import { toast } from "react-toastify";
 
 const Manage = () => {
   const [selectedContactId, setSelectedContactId] = useState(null);
@@ -42,8 +42,10 @@ const Manage = () => {
       await deleteDoc(doc(data, "contacts", id)); // Xóa contact theo id từ Firestore
       setContacts(contacts.filter((contact) => contact.id !== id)); // Cập nhật lại danh sách contacts sau khi xóa
       // console.log(`Deleted contact with id: ${id}`);
+      toast.success("")
     } catch (error) {
       console.error("Error deleting contact: ", error);
+      toast.error("Ahihi!Hãy gọi IT Support để được tư vấn về lỗi!")
     }
   };
 
@@ -51,29 +53,7 @@ const Manage = () => {
     fetchContacts();
   }, []);
   return (
-    // <div>
-    //   <Table>
-    //     <TableCaption>A list of your recent invoices.</TableCaption>
-    //     <TableHeader>
-    //       <TableRow>
-    //         <TableHead className="w-[100px]">Invoice</TableHead>
-    //         <TableHead className="w-[50px]">Status</TableHead>
-    //         <TableHead className="w-[200px]">Method</TableHead>
-    //         <TableHead className="w-[100px]">Amount</TableHead>
-    //       </TableRow>
-    //     </TableHeader>
-    //     <TableBody>
-    //       {contacts.map((contact) => (
-    //         <TableRow key={contact.id}>
-    //           <TableCell className="w-[100px]">{contact.name}</TableCell>
-    //           <TableCell className="w-[50px]">{contact.email}</TableCell>
-    //           <TableCell className="w-[200px]">{contact.subject}</TableCell>
-    //           <TableCell className="w-[100px]">{contact.phone}</TableCell>
-    //         </TableRow>
-    //       ))}
-    //     </TableBody>
-    //   </Table>
-    // </div>
+   
 
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="mx-auto w-full max-w-4xl">

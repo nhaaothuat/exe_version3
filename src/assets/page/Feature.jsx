@@ -7,16 +7,16 @@ import { SlideLeft } from "../../utility/animation";
 const WhyChooseData = [
   {
     id: 1,
-    title: "One-on-one Teaching",
-    desc: "All of our special education experts have a degree in special education.",
+    title: "Uy tín",
+    desc: "Bảng điểm công chứng, hồ sơ lý lịch rõ ràng, minh bạch, uy tín.",
     icon: <GrYoga />,
     bgColor: "#0063ff",
     delay: 0.3,
   },
   {
     id: 2,
-    title: "24/7 Tutor Availability",
-    desc: "Our tutors are always available to respond as quick as possible for you",
+    title: "Makerting",
+    desc: "Cung cấp, hỗ trợ về marketing cho các cá nhân, trung tâm về mảng giáo dục.",
 
     icon: <FaDumbbell />,
     bgColor: "#73bc00",
@@ -24,8 +24,8 @@ const WhyChooseData = [
   },
   {
     id: 3,
-    title: "Interactive Whiteboard",
-    desc: "Our digital whiteboard equipped with audio and video chat fetures.",
+    title: "Giao diện",
+    desc: "Thiết kế giao diện phù hợp hơn so với người dùng hiện nay.",
 
     icon: <GiGymBag />,
     bgColor: "#fa6400",
@@ -33,8 +33,8 @@ const WhyChooseData = [
   },
   {
     id: 4,
-    title: "Affordable Prices",
-    desc: "Choose an expert tutor based on your budget and per hour.",
+    title: "Chất lượng",
+    desc: "Liên kết với khoa sư phạm đại học Quy Nhơn và khách hàng có thể chọn gia sư phù hợp hơn.",
 
     icon: <GiGymBag />,
     bgColor: "#fe6baa",
@@ -44,15 +44,15 @@ const WhyChooseData = [
 
 const Feature = () => {
   return (
-    <div className="bg-[#f9fafc]">
-      <div className=" py-24 px-5">
+    <div className="bg-[#f9fafc] px-8">
+      <div className=" py-24 px-8">
         {/* header section */}
-        <div className="space-y-4 p-6 text-center max-w-[500px] mx-auto mb-5">
+        <div className=" p-6 text-center max-w-[500px] mx-auto mb-5">
           <h1 className="uppercase font-semibold text-orange-600">
-            Why Choose Us
+            Vì sao lại chọn chúng tôi?
           </h1>
           <p className="font-semibold text-3xl">
-            Benefits of online tutoring services with us
+            Lợi ích khi chọn các dịch vụ bên chúng tôi
           </p>
         </div>
         {/* cards section */}
@@ -60,7 +60,7 @@ const Feature = () => {
           {WhyChooseData.map((item) => {
             return (
               <motion.div
-              variants={SlideLeft(item.delay)}
+                variants={SlideLeft(item.delay)}
                 key={item.id}
                 initial="hidden"
                 whileInView={"visible"}

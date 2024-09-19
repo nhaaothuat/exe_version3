@@ -5,56 +5,56 @@ import { FaComputer, FaBook } from "react-icons/fa6";
 const subjectList = [
   {
     id: 1,
-    name: "Engineering",
+    name: "Toán học",
     icon: <FaComputer />,
     color: "#0063ff",
     delay: 0.2,
   },
   {
     id: 2,
-    name: "English",
+    name: "Văn học",
     icon: <FaBook />,
     color: "#00c986",
     delay: 0.3,
   },
   {
     id: 3,
-    name: "Programming",
+    name: "Hóa học",
     icon: <FaComputer />,
     color: "#922aee",
     delay: 0.4,
   },
   {
     id: 4,
-    name: "Science",
+    name: "Sinh học",
     icon: <FaBook />,
     color: "#ea7516",
     delay: 0.5,
   },
   {
     id: 5,
-    name: "History",
+    name: "Vật lý",
     icon: <FaBook />,
     color: "#075267",
     delay: 0.6,
   },
   {
     id: 6,
-    name: "Psychology",
+    name: "Tiếng Anh",
     icon: <FaBook />,
     color: "#986d1d",
     delay: 0.7,
   },
   {
     id: 7,
-    name: "Web design",
+    name: "Lịch sử",
     icon: <FaBook />,
     color: "#b93838",
     delay: 0.8,
   },
   {
     id: 8,
-    name: "See all",
+    name: "Địa lý",
     icon: <FaBook />,
     color: "#464646",
     delay: 0.9,
@@ -64,16 +64,13 @@ const subjectList = [
 const SubjectCard = () => {
   return (
     <div className=" py-14 md:py-24 px-5">
-      
       <div className="space-y-4 p-6 text-center max-w-[600px] mx-auto mb-5">
         <h1 className="uppercase font-semibold text-orange-500">
-          Our tutor subjects
+          GIA SƯ Ở ĐA DẠNG MÔN HỌC Hãy tìm kiếm gia sư phù hợp với mình!
         </h1>
-        <p className="font-semibold text-3xl">
-          Find Online Tutor in Any Subject
-        </p>
+        <p className="font-semibold text-3xl">GIA SƯ Ở ĐA DẠNG MÔN HỌC</p>
       </div>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
         {subjectList.map((subject) => {
           return (
@@ -86,7 +83,7 @@ const SubjectCard = () => {
                 stiffness: 100,
                 delay: subject.delay,
               }}
-              className="cursor-default border rounded-lg border-secondary/20 p-4 flex justify-start items-center gap-4 hover:!scale-105 hover:!shadow-xl duration-200 cursor-pointer"
+              className=" border rounded-lg border-secondary/20 p-4 flex justify-start items-center gap-4 hover:!scale-105 hover:!shadow-xl duration-200 cursor-pointer"
             >
               <div
                 style={{
@@ -103,8 +100,6 @@ const SubjectCard = () => {
         })}
       </div>
     </div>
-
-
   );
 };
 

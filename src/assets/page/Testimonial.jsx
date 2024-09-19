@@ -4,30 +4,34 @@ import Slider from "react-slick";
 const TestimonialsData = [
   {
     id: 1,
-    name: "John Doe",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/101/101",
+    name: "Phạm Thị Mai Linh",
+    school: "Trường THPT Chuyên Lê Quý Đôn",
+    text: "Thầy không chỉ dạy kiến thức mà còn giúp em có phương pháp học tập hiệu quả hơn. Nhờ vậy mà em đã đạt điểm cao trong kỳ thi Học sinh giỏi môn Sinh học.",
+    img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fthanhnien.vn%2Fhoc-sinh-den-truong-tags547028.html&psig=AOvVaw2GynfgJYJNDrSLs_ugP-DT&ust=1726809210093000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCW8d2fzogDFQAAAAAdAAAAABAE",
     delay: 0.2,
   },
   {
     id: 2,
-    name: "Steve Smith",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/102/102",
+    name: "Lê Hoàng Anh",
+    school: "Trường THCS Lý Tự Trọng",
+    text: "Trung tâm đã kết nối em với một gia sư tuyệt vời. Em gặp khó khăn trong việc học Hóa, nhưng thầy đã giúp em hiểu bài hơn và không còn sợ môn này nữa.",
+    img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fthuvienphapluat.vn%2Fchinh-sach-phap-luat-moi%2Fvn%2Fho-tro-phap-luat%2Ftu-van-phap-luat%2F63999%2Fkhi-nao-hoc-sinh-cap-2-cap-3-phai-ren-luyen-trong-ki-nghi-he&psig=AOvVaw2GynfgJYJNDrSLs_ugP-DT&ust=1726809210093000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCW8d2fzogDFQAAAAAdAAAAABAJ",
     delay: 0.5,
   },
   {
     id: 3,
-    name: "Kristen",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/104/104",
+    name: "Trần Thanh Huyền ",
+    school: "Trường THPT Trưng Vương",
+    text: "Gia sư của trung tâm rất chuyên nghiệp và thân thiện. Nhờ sự giúp đỡ của thầy cô, em đã nắm vững ngữ pháp tiếng Anh và tự tin hơn trong việc giao tiếp.",
+    img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fbaochinhphu.vn%2Flo-trinh-mien-hoc-phi-voi-tre-em-mam-non-5-tuoi-va-hoc-sinh-thcs-102230310092646874.htm&psig=AOvVaw2GynfgJYJNDrSLs_ugP-DT&ust=1726809210093000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCW8d2fzogDFQAAAAAdAAAAABAR",
     delay: 0.8,
   },
   {
     id: 5,
-    name: "Ariana",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/103/103",
+    name: "Nguyễn Minh Khoa",
+    school: "Trường THPT Quốc Học Quy Nhơn",
+    text: "Nhờ sự hướng dẫn tận tình, em đã cải thiện rất nhiều trong môn Toán và Lý. Điểm số của em tăng đáng kể chỉ sau vài tháng học. ",
+    img: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcafef.vn%2Fmoi-nhat-lich-di-hoc-tro-lai-chi-tiet-cua-hoc-sinh-31-63-tinh-thanh-20210813152507018.chn&psig=AOvVaw2GynfgJYJNDrSLs_ugP-DT&ust=1726809210093000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCW8d2fzogDFQAAAAAdAAAAABAZ",
     delay: 1.1,
   },
 ];
@@ -38,7 +42,7 @@ const Testimonial = () => {
     infinite: true,
     speed: 500,
     slidesToScroll: 1,
-//     autoplay: true,
+    //     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
     pauseOnHover: true,
@@ -74,11 +78,9 @@ const Testimonial = () => {
       <div className=" ">
         {/* header section */}
         <div className="space-y-4 p-6 text-center max-w-[600px] mx-auto mb-6">
-          <h1 className="uppercase font-semibold text-orange-600">
-            OUR TESTIMONIALS
-          </h1>
+          <h1 className="uppercase font-semibold text-orange-600">Phản hồi</h1>
           <p className="font-semibold text-3xl ">
-            What Our Students Say About Us
+            Phản hồi khách hàng về chúng tôi
           </p>
         </div>
         {/* Testimonial cards section */}
@@ -99,13 +101,12 @@ const Testimonial = () => {
                         <p className="text-xl font-bold text-black/80">
                           {item.name}
                         </p>
-                        <p>{item.name}</p>
+                        <p>{item.school}</p>
                       </div>
                     </div>
                     {/* bottom section */}
                     <div className="py-6 space-y-4">
                       <p className="text-sm text-gray-500">{item.text}</p>
-                      
                     </div>
                   </div>
                 </div>

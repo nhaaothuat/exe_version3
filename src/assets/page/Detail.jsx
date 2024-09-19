@@ -34,7 +34,7 @@ const Detail = () => {
               <div className="lg:col-span-3 w-full lg:sticky top-0 text-center">
                 <div className="px-4 py-10 rounded-lg shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative">
                   <img
-                    src="https://readymadeui.com/images/laptop5.webp"
+                    src={`https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/${product.avatarURL}`}
                     alt="Product"
                     className="w-3/4 rounded object-cover mx-auto"
                   />
@@ -107,7 +107,7 @@ const Detail = () => {
 
                 <div className="flex flex-wrap gap-4 mt-8">
                   <p className="text-gray-800 text-3xl font-bold">
-                    {numeral(product.tuitionFee).format("0,0")} 
+                    {numeral(product.tuitionFee).format("0,0")} VNĐ/buổi
                   
                   </p>
                 </div>

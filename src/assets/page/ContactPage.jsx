@@ -42,9 +42,9 @@ const ContactPage = () => {
       setPhone("");
       setMess("");
 
-      toast.success("Post created successfully!");
+      toast.success("Bạn đã thành công giành sự chú ý của chúng tôi");
     } catch (error) {
-      toast.error("Error occurred while submitting the post.");
+      toast.error("Ahihi!!Hình như lỗi rồi!");
       console.log(error);
       setLoading(false);
     } finally {
@@ -225,6 +225,7 @@ const ContactPage = () => {
                 className="border p-2 rounded w-full"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                required
               />
               <input
                 type="text"
@@ -232,6 +233,7 @@ const ContactPage = () => {
                 className="border p-2 rounded w-full"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                required
               />
             </div>
             <input
@@ -240,6 +242,7 @@ const ContactPage = () => {
               className="border p-2 rounded w-full mt-4"
               onChange={(e) => setSubject(e.target.value)}
               value={subject}
+              required
             />
             <input
               type="text"
@@ -247,11 +250,13 @@ const ContactPage = () => {
               className="border p-2 rounded w-full mt-4"
               onChange={(e) => setPhone(e.target.value)}
               value={phone}
+              required
             />
             <textarea
               className="border p-2 rounded w-full   mt-4"
               rows="5"
               placeholder="Nhập tin nhắn ở đây"
+              required
               onChange={(e) => setMess(e.target.value)}
               value={mess}  
               disabled={loading}
