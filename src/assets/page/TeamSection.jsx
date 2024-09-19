@@ -8,7 +8,7 @@ const people = [
     picture:
       "https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-1/457461438_1027406379119513_996457766905628437_n.jpg?stp=cp6_dst-jpg_s200x200&_nc_cat=108&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=lXKxAieyOYoQ7kNvgGaoJ60&_nc_ht=scontent.fsgn5-6.fna&_nc_gid=A28hKsJZfTRrKciuhOryboO&oh=00_AYAuVXQWDbw9J3H8CyKjUVShWqre76mvBp9JGMMbEPmrrw&oe=66EDFDA9",
     description:
-      "Harum iusto exercitationem assumenda quas nostrum perspiciatis quos iste sit reprehenderit, libero quae aperiam sapiente delectus, porro tempore minus repellendus ratione distinctio!",
+      "Mình rất tâm huyết với dự án này bởi vì mình mong muốn mang lại cho khách hang một trải nghiệm cũng như các gia sư chất lượng cao cho mọi người.",
     facebookURL: "https://www.facebook.com/hioreooo",
   },
   {
@@ -18,7 +18,7 @@ const people = [
     picture:
       "https://scontent.fsgn5-1.fna.fbcdn.net/v/t39.30808-1/438240092_1488672665397221_688442610448854677_n.jpg?stp=dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=3PuWa4bOAcIQ7kNvgEs-PJW&_nc_ht=scontent.fsgn5-1.fna&_nc_gid=AVXRptrPodThtdUpsO3HlQz&oh=00_AYDfZZJK8Hob-XjdfOiw-phpkgGpR3-P__FGfsbvixmjrQ&oe=66EE0797",
     description:
-      "Harum iusto exercitationem assumenda quas nostrum perspiciatis quos iste sit reprehenderit, libero quae aperiam sapiente delectus, porro tempore minus repellendus ratione distinctio!",
+      "Mình khá thích dự án lần này của bọn mình vì nó đem lại một giá trị khá cao trong cuộc sống ",
     facebookURL: "https://www.facebook.com/tnph226",
   },
   {
@@ -28,7 +28,7 @@ const people = [
     picture:
       "https://scontent.fsgn5-1.fna.fbcdn.net/v/t39.30808-1/453279699_512310627926613_4762339555225568575_n.jpg?stp=dst-jpg_s200x200&_nc_cat=102&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=rp8bFMprI_MQ7kNvgFG6_WX&_nc_ht=scontent.fsgn5-1.fna&oh=00_AYAbspfbHBY5nPVXQloxq3VrytgtAohlwt6jGewg-feBAQ&oe=66EE0652",
     description:
-      "Harum iusto exercitationem assumenda quas nostrum perspiciatis quos iste sit reprehenderit, libero quae aperiam sapiente delectus, porro tempore minus repellendus ratione distinctio!",
+      "Mình rất thích dự án của bọn mình. Tuy chỉ có ít thành viên nhưng có thể mở mang thêm nhiều kiến thức mới.",
     facebookURL: "https://www.facebook.com/profile.php?id=100074430396647",
   },
 ];
