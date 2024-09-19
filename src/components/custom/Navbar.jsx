@@ -129,10 +129,13 @@ const Navbar = () => {
         isScrolled ? "bg-[#DFF5FF]" : "bg-white"
       }`}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
+        
         <Link to="/" className=" items-center">
-          <img src="/logo2.png" className="h-30 w-20" />
+          <img src="/logo2.png" className="h-20 w-20" />
         </Link>
+        
+        
 
         <ul className="hidden space-x-8 lg:flex">{renderMenuItems()}</ul>
 

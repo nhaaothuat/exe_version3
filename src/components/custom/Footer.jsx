@@ -42,24 +42,24 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
             <div>
               <p className="font-semibold tracking-wide text-teal-accent-400">
-                Category
+                HỖ TRỢ
               </p>
-              <hr />
+              <hr className="mt-3"/>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/contact"
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
-                    News
-                  </a>
+                    Liên hệ 
+                  </Link>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="/"
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
-                    World
+                    
                   </a>
                 </li>
                 <li>
@@ -75,115 +75,68 @@ const Footer = () => {
                     href="/"
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
-                    References
+                    Đăng kí trở thành gia sư
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
 
             <div>
               <p className="font-semibold tracking-wide text-teal-accent-400">
-                Cherry
+                STARHUB 
               </p>
-              <hr />
+              <hr className="mt-3"/>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/tutor"
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
-                    Web
-                  </a>
+                    Trở thành gia sư
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/about"
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
-                    eCommerce
-                  </a>
+                    Về chúng tôi
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/product"
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
-                    Business
-                  </a>
+                    Tìm gia sư
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
+                  <Link
+                    to="/blog"
+                    className="transiti on-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
-                    Entertainment
-                  </a>
+                    Tin tức
+                  </Link>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="/"
                     className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                   >
                     Portfolio
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
-            {/* 
-            <div>
-              <p className="font-semibold tracking-wide text-teal-accent-400">
-                Apples
-              </p>
-              <hr />
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Media
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Brochure
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Nonprofit
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Educational
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Projects
-                  </a>
-                </li>
-              </ul>
-            </div> */}
+             
+            
 
             <div className=" ">
               <p className="font-semibold tracking-wide text-teal-accent-400">
-                Apples
+                KẾT NỐI FANPAGE
               </p>
-              <hr className="mx-2" />
+              <hr className="mt-3" />
               <div className="border-none py-4 ">
                 <iframe
                   src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61565847414624&tabs=timeline&width=350&height=200&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=834360898578517"

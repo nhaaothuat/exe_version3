@@ -136,6 +136,7 @@ const Admin = () => {
                 <SelectLabel>Admin</SelectLabel>
                 <SelectItem value="Thục Nguyên">Thục Nguyên</SelectItem>
                 <SelectItem value="Yến Nhi">Yến Nhi</SelectItem>
+                <SelectItem value="Hồng Ngọc">Hồng Ngọc</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>

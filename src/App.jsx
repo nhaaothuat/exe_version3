@@ -11,6 +11,7 @@ import About from "./assets/page/About";
 import Detail from "./assets/page/Detail";
 import Blog from "./assets/page/Blog";
 import Tutor from "./assets/page/Tutor";
+import DetailNews from "./assets/page/DetailNews";
 
 function App() {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/tutor" element={<Tutor />} />
+        <Route path="/detailn/:id" element={<DetailNews />} />
       </Routes>
     </div>
   );

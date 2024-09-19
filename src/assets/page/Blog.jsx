@@ -1,49 +1,31 @@
-import React from "react";
-import test from "/test.jpg";
-const list_blog = [
-  {
-    id: 1,
-    title: "Books",
-    createdAt: "5 JAN 2020",
-    "sub-title": "Tell me something",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor voluptas iure delectus nostrum fuga, culpa voluptates suscipit neque maiores error. Delectus itaque, velit maiores maxime optio illum earum mollitia.",
-  },
-  {
-    id: 2,
-    title: "Books",
-    createdAt: "5 JAN 2020",
-    "sub-title": "Tell me something",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor voluptas iure delectus nostrum fuga, culpa voluptates suscipit neque maiores error. Delectus itaque, velit maiores maxime optio illum earum mollitia.",
-  },
-  {
-    id: 3,
-    title: "Books",
-    createdAt: "5 JAN 2020",
-    "sub-title": "Tell me something",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor voluptas iure delectus nostrum fuga, culpa voluptates suscipit neque maiores error. Delectus itaque, velit maiores maxime optio illum earum mollitia.",
-  },
-  {
-    id: 4,
-    title: "Books",
-    createdAt: "5 JAN 2020",
-    "sub-title": "Tell me something",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor voluptas iure delectus nostrum fuga, culpa voluptates suscipit neque maiores error. Delectus itaque, velit maiores maxime optio illum earum mollitia.",
-  },
-  {
-    id: 5,
-    title: "Books",
-    createdAt: "5 JAN 2020",
-    "sub-title": "Tell me something",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor voluptas iure delectus nostrum fuga, culpa voluptates suscipit neque maiores error. Delectus itaque, velit maiores maxime optio illum earum mollitia.",
-  },
-];
+
+import { collection, getDocs } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { data } from '../../../src/utility/firebase';
+
 
 const Blog = () => {
+
+
+  
+     const [blog, setBlog] = useState([]);
+   
+     const fetchBlog = async () => {
+       const querySnapshot = await getDocs(collection(data, "posts"));
+       const blogData = querySnapshot.docs.map((doc) => ({
+         id: doc.id,
+         ...doc.data(),
+       }));
+       setBlog(blogData);
+       console.log(blogData);
+     };
+   
+     
+     useEffect(() => {
+       fetchBlog();
+     }, []);
+
   return (
     <>
       {/* Banner */}
@@ -64,33 +46,117 @@ const Blog = () => {
 
       {/*End  */}
 
-      <div className="flex justify-center items-center min-h-screen bg-Yellow font-FigTree text-base">
-        <div className="flex flex-col justify-center bg-white p-5 rounded-xl border-2 border-black h-full max-lg:w-[375px] lg:w-[384px] shadow-[10px_10px_0px_1px_rgba(0,0,0,1)]">
-          <img
-            src={test}
-            alt="illustration"
-            className="rounded-tl-xl rounded-tr-xl  "
-          />
-          <div className="mt-6">
-            <button className="bg-Yellow px-4 py-2 rounded-lg font-extrabold cursor-default">
-              Learning
-            </button>
-            <p className="mt-4 font-bold">Published 21 Dec 2023</p>
-            <h2 className="font-extrabold text-[20px] mt-4 mb-4 hover:text-Yellow hover:cursor-pointer">
-              HTML & CSS foundations
-            </h2>
-            <p className="text-Grey">
-              These languages are the backbone of every website, defining
-              structure, content, and presentation.
-            </p>
-            <div className="mt-4 flex justify-start items-center gap-4">
-              {/* <img src={avatar} alt='avatar'
-                className='w-10' /> */}
-              <p className="font-extrabold text-black">Greg Hooper</p>
+      {/* <section className="text-gray-600 body-font overflow-hidden">
+        <div className="container py-24 mx-auto">
+          <div className="-my-8 divide-y-2 divide-gray-100">
+            <div className="py-4 flex flex-wrap md:flex-nowrap">
+              <Link to="/">
+                {" "}
+                <article className="flex bg-white transition hover:shadow-xl ">
+                  <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
+                    <time
+                      dateTime="2022-10-10"
+                      className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
+                    >
+                      <span>2022</span>
+                      <span className="w-px flex-1 bg-gray-900/10"></span>
+                      <span>Oct 10</span>
+                    </time>
+                  </div>
+
+                  <div className="hidden sm:block sm:basis-48">
+                    <img
+                      alt=""
+                      src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                      className="aspect-square h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="flex flex-1 flex-col justify-between">
+                    <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-4">
+                      <h3 className="font-bold uppercase text-gray-900">
+                        Gia sư giá rẻ, chất lượng, uy tín tại thành phố Quy Nhơn
+                      </h3>
+
+                      <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+                        Gia sư tại nhà có thật sự hiệu quả? Thuê gia sư dạy kèm
+                        cho con, có nên không? Đây là câu hỏi lớn của rất nhiều
+                        các bậc phụ huynh và học sinh bận rộn, không có nhiều
+                        thời gian dành cho con. Trong ...
+                      </p>
+                    </div>
+
+                    <div className="sm:flex sm:items-end sm:justify-end">
+                      <Link
+                        to="/blog"
+                        className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+                      >
+                        Read Blog
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              </Link>
             </div>
+
+           
           </div>
         </div>
-      </div>
+      </section> */}
+
+<section className="text-gray-600 body-font overflow-hidden">
+        <div className="container py-24 mx-auto">
+          <div className="-my-8 divide-y-2 divide-gray-100">
+            {blog.map((blog) => (
+              <div key={blog.id} className="py-4 flex flex-wrap md:flex-nowrap">
+                <Link to={`/detailn/${blog.id}`}>
+                  <article className="flex bg-white transition hover:shadow-xl">
+                    <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
+                      <time
+                        // dateTime={blog.createdAt }
+                        className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
+                      >
+                        {/* <span>{blog.createdAt}</span> */}
+                        <span className="w-px flex-1 bg-gray-900/10"></span>
+                        {/* <span>{new Date(blog.createdAt).toLocaleString('default', { month: 'short', day: 'numeric' })}</span> */}
+                      </time>
+                    </div>
+
+                    <div className="hidden sm:block sm:basis-48">
+                      <img
+                        alt={blog.title}
+                        src={blog.imageUrl}
+                        className="aspect-square h-full w-full object-cover"
+                      />
+                    </div>
+
+                    <div className="flex flex-1 flex-col justify-between">
+                      <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-4">
+                        <h3 className="font-bold uppercase text-gray-900">
+                          {blog.title}
+                        </h3>
+
+                        <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+                          {blog.content}
+                        </p>
+                      </div>
+
+                      <div className="sm:flex sm:items-end sm:justify-end">
+                        <Link
+                          to={`/detailn/${blog.id}`}
+                          className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+                        >
+                          Read Blog
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 };
