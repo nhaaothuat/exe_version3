@@ -125,13 +125,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`sticky top-0 z-50 py-4 mx-auto sm:px-6 md:px-8 lg:px-10 ${
+      className={`sticky top-0 z-50 py-1 mx-auto sm:px-6 md:px-8 lg:px-10 ${
         isScrolled ? "bg-[#DFF5FF]" : "bg-white"
       }`}
     >
       <div className="flex items-center justify-between">
-        <Link to="/" className="inline-flex items-center">
-          <img src="/logo2.png" className="h-14 w-14" />
+        <Link to="/" className=" items-center">
+          <img src="/logo2.png" className="h-30 w-20" />
         </Link>
 
         <ul className="hidden space-x-8 lg:flex">{renderMenuItems()}</ul>
