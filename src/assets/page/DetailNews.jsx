@@ -32,7 +32,8 @@ const DetailNews = () => {
   }, [id]);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4">
+    
+<div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
         {loading ? (
           <Loading />
@@ -73,7 +74,7 @@ const DetailNews = () => {
               />
               {/* Back to Home button */}
               <div className="mt-6">
-                <Link to="/">
+                <Link to="/blog">
                   <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">
                     Back to Home
                   </button>
@@ -84,6 +85,7 @@ const DetailNews = () => {
         )}
       </div>
     </div>
+
   );
 };
 

@@ -27,7 +27,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/admin"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              className=" font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Admin Settings
             </Link>
@@ -126,7 +126,7 @@ const Navbar = () => {
   return (
     <div
       className={`sticky top-0 z-50 py-1 mx-auto sm:px-6 md:px-8 lg:px-10 ${
-        isScrolled ? "bg-[#DFF5FF]" : "bg-white"
+        isScrolled ? "bg-white" : " bg-gradient-to-r from-blue-100 to-pink-200"
       }`}
     >
       <div className="flex items-center justify-between ">

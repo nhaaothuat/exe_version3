@@ -17,9 +17,39 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import { AiOutlineLoading } from "react-icons/ai";
-
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import { Timestamp } from 'firebase/firestore';
 const Admin = () => {
-  const contentRef = useRef(null);
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ["bold", "italic", "underline"],
+      ["link", "image"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["blockquote", "code-block"],
+      [{ script: "sub" }, { script: "super" }],
+    ],
+  };
+
+  const formats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "indent",
+    "code-block",
+    "link",
+    "image",
+    "video",
+  ];
+  // const contentRef = useRef(null);
 
   // State for form fields and loading
   const [image, setImage] = useState("");
@@ -68,7 +98,7 @@ const Admin = () => {
         content,
         imageUrl: uploadedImageUrl || "",
         theme,
-        createdAt: new Date(),
+        createdAt:  Timestamp.fromDate(new Date()),
       };
 
       await savePostToFirestore(postData);
@@ -112,21 +142,19 @@ const Admin = () => {
 
         {/* Content */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Content <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            ref={contentRef}
-            className="w-full border border-gray-300 rounded-lg p-3 focus:ring focus:ring-indigo-200 mt-2 min-h-[200px]"
-            placeholder="Write your post content"
+         
+          <ReactQuill
+            theme="snow"
+            style={{ height: 100 }}
             value={content}
-            onChange={(e) => setContent(e.target.value)}
-            required
-          ></textarea>
+            onChange={setContent}
+            modules={modules}
+            formats={formats}
+          />
         </div>
 
         {/* Theme Selection */}
-        <div className="">
+        <div className="pt-10">
           <Select onValueChange={setTheme} value={theme}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Người tạo" />
@@ -145,7 +173,7 @@ const Admin = () => {
         {/* Featured Image */}
         <div className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="picture">Picture</Label>
-          <Input id="picture" type="file" onChange={handleImageChange}/>
+          <Input id="picture" type="file" onChange={handleImageChange} />
           {image && (
             <div className="mt-4">
               <p className="text-sm text-gray-500 mb-2">Preview:</p>

@@ -1,13 +1,13 @@
 import React from "react";
 import Feature from "./Feature";
-import Slider from "react-slick";
+import test from "/image.png";
 import Testimonial from "./Testimonial";
 import { GrUserExpert } from "react-icons/gr";
 import { MdOutlineAccessTime } from "react-icons/md";
 import { FaBookReader } from "react-icons/fa";
 import { FadeUp } from "../../utility/animation";
 import { motion } from "framer-motion";
-import test from "../../../public/tutor.jpg";
+
 import TeamSection from "./TeamSection";
 
 const About = () => {
@@ -16,7 +16,7 @@ const About = () => {
       {/* Banner */}
 
       <div className="relative">
-        <div className="absolute inset-0 bg-white bg-opacity-50 flex flex-col justify-center items-center text-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-pink-200 flex flex-col justify-center items-center text-center">
           <span className="text-lg md:text-xl text-black">Contact Us</span>
           <h1 className="text-3xl md:text-5xl font-bold text-black">
             Get Helps & Friendly Support
@@ -25,81 +25,76 @@ const About = () => {
         <img
           src="https://channel.mediacdn.vn/428462621602512896/2023/7/14/photo-1-1689302121228313858070.jpg"
           alt=""
-          className="w-full h-48 md:h-64 object-cover"
+          className="w-full h-48 md:h-64 object-cover relative z-0"
         />
       </div>
 
+      
+
       {/*End  */}
-      
-        <Feature />
-      
 
-      {/* Test */}
-      <section>
-        <div className="container  py-14 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-8 space-y-6 md:space-y-0">
-          {/* Banner Image */}
-          <div className="flex justify-center items-center">
-            <motion.img
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              src={test}
-              alt=""
-              className="w-[350px] md:max-w-[450px] object-cover drop-shadow pb-5"
-            />
-          </div>
-          {/* Banner Text */}
-          <div className="flex flex-col justify-center">
-            <div className="text-center md:text-left space-y-12 ">
-              <motion.h1
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="text-3xl md:text-4xl font-bold !leading-snug "
-              >
-                Nền Tảng Gia Sư Dẫn Đầu Trong Tương Lai 
-              </motion.h1>
-              <div className="flex flex-col gap-6">
-             
+      <Feature />
 
-                <motion.div
-                  variants={FadeUp(0.2)}
-                  initial="initial"
-                  whileInView={"animate"}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4 p-6 bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
-                >
-                  <FaBookReader className="text-2xl" />
-                  <p className="text-lg">10+ Phản hồi tốt của khách hàng </p>
-                </motion.div>
-                <motion.div
-                  variants={FadeUp(0.4)}
-                  initial="initial"
-                  whileInView={"animate"}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4 p-6 bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
-                >
-                  <GrUserExpert className="text-2xl" />
-                  <p className="text-lg">Lựa chọn linh hoạt</p>
-                </motion.div>
-                <motion.div
-                  variants={FadeUp(0.6)}
-                  initial="initial"
-                  whileInView={"animate"}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4 p-6 bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
-                >
-                  <MdOutlineAccessTime className="text-2xl" />
-                  <p className="text-lg">Tư vấn nhiệt tình</p>
-                </motion.div>
-              </div>
-            </div>
-          </div>
+      {/* Test2 */}
+      <div className="flex flex-col md:flex-row items-center justify-between px-6 py-20">
+        {/* Hình ảnh */}
+        <div className="w-full md:w-1/2 mb-6 md:mb-0">
+          <img
+            src={test} // Thay đường dẫn này bằng ảnh của bạn
+            alt="Office"
+            className="w-full h-auto object-cover rounded-lg shadow-lg"
+          />
         </div>
-      </section>
-      {/* End */}
+
+        {/* Nội dung */}
+        <div className="w-full md:w-1/2 md:pl-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">ABOUT US</h2>
+          <p className="text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p className="text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          {/* Why Choose Us */}
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            Why Choose Us?
+          </h3>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Aliquip ex ea
+              commodo
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Tempor incididunt
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Exercitation ullamco
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Incididunt ut labore
+            </li>
+            <li className="flex items-center">
+              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
+            </li>
+          </ul>
+        </div>
+      </div>
+
+     
 
       <TeamSection />
 
