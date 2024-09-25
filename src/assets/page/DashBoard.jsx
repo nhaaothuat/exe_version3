@@ -20,7 +20,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const DashBoard = () => {
   const [selectedTutorId, setSelectedTutorId] = useState(null);
@@ -38,15 +38,16 @@ const DashBoard = () => {
 
   const deleteTutor = async (id) => {
     try {
-      await deleteDoc(doc(data, "tutor", id)); // Xóa contact theo id từ Firestore
-      setTutor(tutor.filter((tutor) => tutor.id !== id)); // Cập nhật lại danh sách contacts sau khi xóa
-      // console.log(`Deleted contact with id: ${id}`);
-      toast.success("Ahihi!!!Thêm thành công");
+      await deleteDoc(doc(data, "tutor", id)); // Delete tutor from Firestore
+      const updatedTutors = tutor.filter((tutor) => tutor.id !== id);
+      setTutor(updatedTutors);
+      toast.success("Ahihi!!!Xóa thành công"); // Update success message
     } catch (error) {
-      console.error("Error deleting contact: ", error);
+      console.error("Error deleting tutor: ", error);
       toast.error("Ahihi!Hãy gọi IT Support để được tư vấn về lỗi!");
     }
   };
+
 
   useEffect(() => {
     fetchContacts();
@@ -71,16 +72,16 @@ const DashBoard = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {tutor.map((contact) => (
-              <TableRow key={contact.id}>
+            {tutor.map((tutor) => (
+              <TableRow key={tutor.id}>
                 {/* <TableCell>{contact.id}</TableCell> */}
-                <TableCell>{contact.name}</TableCell>
-                <TableCell>{contact.email}</TableCell>
-                <TableCell>{contact.university}</TableCell>
-                <TableCell>{contact.current}</TableCell>
-                <TableCell>{contact.subject}</TableCell>
-                <TableCell>{contact.phone}</TableCell>
-                <TableCell>{contact.mess}</TableCell>
+                <TableCell>{tutor.name}</TableCell>
+                <TableCell>{tutor.email}</TableCell>
+                <TableCell>{tutor.university}</TableCell>
+                <TableCell>{tutor.current}</TableCell>
+                <TableCell>{tutor.subject}</TableCell>
+                <TableCell>{tutor.phone}</TableCell>
+                <TableCell>{tutor.mess}</TableCell>
                 <TableCell>
                   <Dialog>
                     <DialogTrigger asChild>
@@ -116,6 +117,7 @@ const DashBoard = () => {
           </TableBody>
         </Table>
       </div>
+      <ToastContainer />
     </div>
   );
 };

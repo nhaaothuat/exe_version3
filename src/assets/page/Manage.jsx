@@ -1,10 +1,9 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { data } from "../../utility/firebase";
 import {
   Table,
   TableBody,
-  
   TableCell,
   TableHead,
   TableHeader,
@@ -21,7 +20,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const Manage = () => {
   const [selectedContactId, setSelectedContactId] = useState(null);
@@ -39,13 +38,13 @@ const Manage = () => {
 
   const deleteContact = async (id) => {
     try {
-      await deleteDoc(doc(data, "contacts", id)); // Xóa contact theo id từ Firestore
-      setContacts(contacts.filter((contact) => contact.id !== id)); // Cập nhật lại danh sách contacts sau khi xóa
-      // console.log(`Deleted contact with id: ${id}`);
-      toast.success("")
+      await deleteDoc(doc(data, "contacts", id)); // Delete contact from Firestore
+      const updatedContacts = contacts.filter((contact) => contact.id !== id);
+      setContacts(updatedContacts);
+      toast.success("Hay");
     } catch (error) {
       console.error("Error deleting contact: ", error);
-      toast.error("Ahihi!Hãy gọi IT Support để được tư vấn về lỗi!")
+      toast.error("Ahihi!Hãy gọi IT Support để được tư vấn về lỗi!");
     }
   };
 
@@ -53,8 +52,6 @@ const Manage = () => {
     fetchContacts();
   }, []);
   return (
-   
-
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="mx-auto w-full max-w-4xl">
         <Table className="bg-white shadow-lg rounded-lg">
@@ -93,7 +90,8 @@ const Manage = () => {
                       <DialogHeader>
                         <DialogTitle>Ahihi</DialogTitle>
                         <DialogDescription>
-                          Bạn có chắc chắc muốn xóa? Nếu chưa quyết định hãy nhấn nút X ở phía trên?
+                          Bạn có chắc chắc muốn xóa? Nếu chưa quyết định hãy
+                          nhấn nút X ở phía trên?
                         </DialogDescription>
                       </DialogHeader>
 
@@ -112,6 +110,7 @@ const Manage = () => {
             ))}
           </TableBody>
         </Table>
+        <ToastContainer />
       </div>
     </div>
   );
