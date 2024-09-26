@@ -37,62 +37,68 @@ const About = () => {
 
       {/* Test2 */}
       <div className="flex flex-col md:flex-row items-center justify-between px-6 py-20">
-        {/* Hình ảnh */}
-        <div className="w-full md:w-1/2 mb-6 md:mb-0">
-          <img
-            src={test} // Thay đường dẫn này bằng ảnh của bạn
-            alt="Office"
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
-          />
-        </div>
+      {/* Hình ảnh */}
+      <motion.div
+        className="w-full md:w-1/2 mb-6 md:mb-0"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <img
+          src={test} // Thay đường dẫn này bằng ảnh của bạn
+          alt="Văn phòng"
+          className="w-full h-auto object-cover rounded-lg shadow-lg"
+        />
+      </motion.div>
 
-        {/* Nội dung */}
-        <div className="w-full md:w-1/2 md:pl-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">ABOUT US</h2>
-          <p className="text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <p className="text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+      {/* Nội dung */}
+      <motion.div
+        className="w-full md:w-1/2 md:pl-12"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">VỀ CHÚNG TÔI</h2>
+        <p className="text-gray-600 mb-6">
+          StarHub mang đến dịch vụ gia sư chuyên nghiệp, giúp học sinh đạt
+          được mục tiêu học tập và phát triển bản thân một cách tốt nhất. Chúng
+          tôi tự hào về đội ngũ gia sư chất lượng cao và phương pháp giảng dạy
+          tiên tiến.
+        </p>
+        <p className="text-gray-600 mb-6">
+          Mỗi gia sư tại StarHub đều được tuyển chọn kỹ càng, có trình độ
+          chuyên môn cao và kinh nghiệm giảng dạy phong phú. Chúng tôi cam kết
+          mang lại sự hài lòng và tiến bộ vượt bậc cho học sinh.
+        </p>
 
-          {/* Why Choose Us */}
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            Why Choose Us?
-          </h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
-            </li>
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Aliquip ex ea
-              commodo
-            </li>
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Tempor incididunt
-            </li>
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
-            </li>
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
-            </li>
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Exercitation ullamco
-            </li>
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Incididunt ut labore
-            </li>
-            <li className="flex items-center">
-              <span className="text-blue-500 mr-2">✔</span> Lorem ipsum dolor
-            </li>
-          </ul>
-        </div>
-      </div>
+        {/* Why Choose Us */}
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">
+          Tại sao chọn chúng tôi?
+        </h3>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
+          {[
+            "Gia sư giàu kinh nghiệm",
+            "Phương pháp giảng dạy tiên tiến",
+            "Hỗ trợ học tập liên tục",
+            "Cam kết tiến bộ",
+            "Linh hoạt thời gian",
+            "Đội ngũ tư vấn tận tình",
+            "Giá cả hợp lý",
+            "Đánh giá chất lượng định kỳ",
+          ].map((item, index) => (
+            <motion.li
+              key={index}
+              className="flex items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <span className="text-blue-500 mr-2">✔</span> {item}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+    </div>
 
      
 

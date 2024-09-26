@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import Loading from "../component/Loading/Loading";
 import { Link } from "react-router-dom";
 // import { Button } from "@/components/ui/button";
-
+import { IoIosSearch } from "react-icons/io";
 const Product = () => {
-  const [products, setProducts] = useState([]); // Initialize as an empty array
+  const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(1); // Start with 6 visible items
+  const [visibleCount, setVisibleCount] = useState(6);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -39,144 +39,137 @@ const Product = () => {
   };
 
   return (
-
     <>
+     <div className="relative bg-gradient-to-b from-blue-100 to-white text-gray-800 py-16 md:py-24 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between rounded-lg shadow-lg overflow-hidden">
+  {/* Nội dung CTA */}
+  <div className="relative z-10 flex-1 text-center md:text-left">
+    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-blue-700">
+      Tìm Gia Sư Tốt Nhất Cho Bạn
+    </h1>
+    <p className="text-lg md:text-xl mb-6 text-gray-700">
+      Kết nối với những gia sư giỏi và nhận ngay những bài học phù hợp với nhu cầu của bạn.
+    </p>
+    <a
+      href="/register"
+      className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1"
+    >
+      Tìm kiếm ngay
+    </a>
+  </div>
 
-<div className="bg-green-500 text-white py-12">
-      <div className="container mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4">
-          Đăng Ký Ngay Để Nhận Ưu Đãi!
-        </h2>
-        <p className="mb-6 text-lg md:text-xl">
-          Trở thành thành viên của chúng tôi và nhận những lợi ích đặc biệt!
-        </p>
-        <a
-          href="/register"
-          className="bg-white text-green-500 px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300"
-        >
-          Đăng Ký Ngay
-        </a>
+  <div className="relative z-10 mt-8 md:mt-0 md:ml-12 flex-shrink-0">
+    <img
+      src="https://source.unsplash.com/random/300x300?teacher"
+      alt="Gia Sư Minh Họa"
+      className="w-64 h-64 md:w-80 md:h-80 rounded-full shadow-lg object-cover border-4 border-blue-600"
+    />
+  </div>
+</div>
+
+<div className="App">
+  {isLoading ? (
+    <Loading />
+  ) : (
+    <div className="container mx-auto flex flex-col py-12 px-4 gap-8">
+      {/* Phần tìm kiếm */}
+      <div className="w-full flex justify-center mb-8">
+        <div className="relative w-full md:w-2/3">
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Tìm kiếm gia sư..."
+            className="border border-gray-300 p-4 rounded-full w-full shadow-lg pl-12 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <span className="absolute left-4 top-4 text-gray-500">
+            <IoIosSearch />
+          </span>
+        </div>
       </div>
-    </div>
 
-    <div className="App">
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <div className="container mx-auto flex py-24">
-          {/* Phần bộ lọc bên trái */}
-          <div className="w-1/4 pr-4">
-            <div className="bg-white rounded-lg shadow p-4 mb-4">
-              <h2 className="text-lg font-semibold mb-2">Bộ lọc</h2>
-              {/* Thêm các bộ lọc tùy ý ở đây */}
-              <div className="flex flex-col">
-                <label className="mb-1 text-sm">Hình thức:</label>
-                <select className="border p-2 rounded">
-                  <option value="">Tất cả</option>
-                  <option value="Area1">Online</option>
-                  <option value="Area2">Offline</option>
-                </select>
-                {/* Có thể thêm nhiều bộ lọc khác tại đây */}
+      {/* Danh sách gia sư */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProducts.slice(0, visibleCount).map((product, index) => (
+          <Link
+            key={index}
+            to={`/detail/${product.id}`}
+            className="relative overflow-hidden rounded-3xl shadow-lg bg-white transform transition hover:scale-105 hover:shadow-2xl duration-300 group"
+          >
+            {/* Border Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-pink-500 to-red-600 opacity-0 group-hover:opacity-100 transition duration-300 rounded-xl"></div>
+            <div className="relative p-6 bg-white rounded-xl">
+              {/* Header Section */}
+              <div className="flex justify-between items-center mb-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-blue-700 sm:text-xl">
+                    {product.fullName}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">
+                    {product.teachingArea}
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <img
+                    alt={product.fullName}
+                    src={`https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/${product.avatarURL}`}
+                    className="w-16 h-16 rounded-full object-cover border-2 border-blue-600 shadow-md"
+                  />
+                </div>
+              </div>
+
+              {/* Subjects Section */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {product.mainSubjects.map((subject) => (
+                  <span
+                    key={subject.id}
+                    className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium"
+                  >
+                    {subject.name}
+                  </span>
+                ))}
+              </div>
+
+              {/* Tuition Fee Section */}
+              <div className="flex justify-between items-center mt-4">
+                <div className="text-gray-600">
+                  <span className="text-xs">Học phí:</span>
+                  <p className="text-lg font-bold text-blue-600">
+                    {numeral(product.tuitionFee).format("0,0")} VND
+                  </p>
+                </div>
+
+                {/* Form of Work Section */}
+                <div className="text-gray-600 text-xs flex gap-2">
+                  {product.formOfWorks.map((form) => (
+                    <span
+                      key={form.id}
+                      className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full"
+                    >
+                      {form.form}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
+        ))}
+      </div>
 
-          {/* Phần nội dung chính */}
-          <div className="w-3/4">
-            {/* Phần tìm kiếm */}
-            <div className="mb-4">
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Tìm kiếm gia sư..."
-                className="border border-gray-300 p-2 rounded w-full"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.slice(0, visibleCount).map((product, index) => (
-                <Link
-                  key={index}
-                  to={`/detail/${product.id}`}
-                  className="relative overflow-hidden rounded-lg shadow-lg bg-white transform transition hover:scale-105 hover:shadow-2xl duration-300"
-                >
-                  {/* Gradient border */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-1 rounded-lg"></div> */}
-                  <div className="relative p-4 sm:p-6 lg:p-8 bg-white rounded-lg">
-                    {/* Header Section */}
-                    <div className="flex justify-between items-center mb-4">
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-800 sm:text-xl">
-                          {product.fullName}
-                        </h3>
-                        <p className="mt-1 text-sm text-gray-500">
-                          {product.teachingArea}
-                        </p>
-                      </div>
-
-                      <div className="shrink-0">
-                        <img
-                          alt={product.fullName}
-                          src={`https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/${product.avatarURL}`}
-                          className="w-16 h-16 rounded-full object-cover border-2 border-blue-500"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Subjects Section */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {product.mainSubjects.map((subject) => (
-                        <span
-                          key={subject.id}
-                          className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium"
-                        >
-                          {subject.name}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Tuition Fee Section */}
-                    <div className="flex justify-between items-center mt-4">
-                      <div className="text-gray-600">
-                        <span className="text-xs">Học phí:</span>
-                        <p className="text-lg font-bold text-blue-500">
-                          {numeral(product.tuitionFee).format("0,0")} VND
-                        </p>
-                      </div>
-
-                      {/* Form of Work Section */}
-                      <div className="text-gray-600 text-xs flex gap-2">
-                        {product.formOfWorks.map((form) => (
-                          <span
-                            key={form.id}
-                            className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full"
-                          >
-                            {form.form}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* Load More Button */}
-            {visibleCount < filteredProducts.length && (
-              <div className="flex justify-center mt-6">
-                <button
-                  onClick={loadMore}
-                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
-                >
-                  Load More
-                </button>
-              </div>
-            )}
-          </div>
+      {/* Load More Button */}
+      {visibleCount < filteredProducts.length && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={loadMore}
+            className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300 shadow-lg transform hover:scale-105"
+          >
+            Xem thêm
+          </button>
         </div>
       )}
     </div>
+  )}
+</div>
+
     </>
   );
 };

@@ -62,43 +62,39 @@ const Home = () => {
     <>
       {/* Banner  */}
 
-      <section className=" min-h-[90vh] flex items-center justify-center px-4 py-20  bg-gradient-to-r from-blue-100 to-pink-200">
-        <div className="text-center max-w-2xl max-md:max-w-md mx-auto">
-          <div>
-            <div className="font-semibold text-base  text-blue-600 mb-8 bg-white rounded-full shadow-lg py-2 px-6 inline-block">
-              {" "}
-              {/* Changed px-30 to px-10 */}
-              <span className="rotate-90 inline-block mr-2">|</span> NỀN TẢNG
-              GIA SƯ DẪN ĐẦU QUY NHƠN
-            </div>
-            <h2 className="text-gray-800 md:text-6xl text-4xl font-extrabold mb-6 md:!leading-[60px]">
-              {" "}
-              Schedule meetings effortlessly
-            </h2>
-            <p className="mt-6 text-lg text-gray-500 leading-relaxed">
-              {" "}
-              Embark on a gastronomic journey with our curated dishes, delivered
-              promptly to your doorstep. Elevate your dining experience today.
-            </p>
+      <section className="min-h-[90vh] flex items-center justify-center px-4 py-20 bg-gradient-to-b from-blue-100 to-white">
+  <div className="text-center max-w-2xl max-md:max-w-md mx-auto">
+    <div>
+      <div className="font-semibold text-base text-blue-600 mb-8 bg-white rounded-full shadow-lg py-2 px-6 inline-block">
+        <span className="rotate-90 inline-block mr-2">|</span> NỀN TẢNG
+        GIA SƯ DẪN ĐẦU QUY NHƠN
+      </div>
+      <h2 className="text-gray-800 md:text-6xl text-4xl font-extrabold mb-6 md:!leading-[60px]">
+        Đặt lịch học một cách dễ dàng
+      </h2>
+      <p className="mt-6 text-lg text-gray-500 leading-relaxed">
+        Khám phá hành trình học tập thú vị với các gia sư chất lượng, sẵn sàng hỗ trợ bạn mọi lúc. Nâng cao trải nghiệm học tập của bạn ngay hôm nay.
+      </p>
 
-            <div className="mt-12 flex gap-x-6 gap-y-4 justify-center max-sm:flex-col">
-              <Link
-                href="#"
-                className="w-full sm:w-auto bg-red-600 text-white font-medium px-8 py-3 rounded-lg shadow-lg hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-300 transition"
-              >
-                Tìm kiếm
-              </Link>
+      <div className="mt-12 flex gap-x-6 gap-y-4 justify-center max-sm:flex-col">
+        <Link
+          to="/product"
+          className="w-full sm:w-auto from-blue-100 text-blue-600 font-medium px-8 py-3 rounded-lg shadow-lg hover:bg-blue-100 focus:outline-none focus:ring focus:ring-red-300 transition"
+        >
+          Tìm kiếm 
+        </Link>
 
-              <Link
-                href="#"
-                className="w-full sm:w-auto bg-white text-red-600 font-medium px-8 py-3 rounded-lg shadow-lg border border-red-600 hover:text-red-700 hover:border-red-700 focus:outline-none focus:ring focus:ring-red-300 transition"
-              >
-                Tìm hiểu
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+        <Link
+         to="/about"
+          className="w-full sm:w-auto bg-white text-red-600 font-medium px-8 py-3 rounded-lg shadow-lg border border-red-600 hover:text-red-700 hover:border-red-700 focus:outline-none focus:ring focus:ring-red-300 transition"
+        >
+          Tìm hiểu
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* End */}
 
@@ -347,19 +343,19 @@ const Home = () => {
       </div>
       {/* End */}
 
-      <div className="bg-gradient-to-r from-blue-700 to-[#B06AB3] font-sans px-6 py-12">
+      <div className="bg-gradient-to-b from-blue-100 to-blue-200 font-sans px-6 py-12">
         <div className="container mx-auto flex flex-col justify-center items-center text-center">
-          <h2 className="text-white sm:text-4xl text-3xl font-bold mb-4">
+          <h2 className="text-blue-900 sm:text-4xl text-3xl font-bold mb-4">
             Tin tức Và Tài liệu
           </h2>
-          <p className="text-white text-base text-center mb-8">
+          <p className="text-blue-700 text-base text-center mb-8">
             Hiểu biết rõ hơn về STARHUB và tài liệu miễn phí. Hãy nhanh tay tìm
             hiểu và tận hưởng các ưu đãi độc quyền!
           </p>
           <Link to="/blog">
             <button
               type="button"
-              className="bg-white text-sm text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-slate-100"
+              className="bg-blue-600 text-white text-sm font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300"
             >
               Xem thêm
             </button>
