@@ -16,18 +16,24 @@ const About = () => {
       {/* Banner */}
 
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-pink-200 flex flex-col justify-center items-center text-center">
-          <span className="text-lg md:text-xl text-black">Contact Us</span>
-          <h1 className="text-3xl md:text-5xl font-bold text-black">
-            Get Helps & Friendly Support
-          </h1>
-        </div>
-        <img
-          src="https://channel.mediacdn.vn/428462621602512896/2023/7/14/photo-1-1689302121228313858070.jpg"
-          alt=""
-          className="w-full h-48 md:h-64 object-cover relative z-0"
-        />
-      </div>
+  <div className="absolute inset-0 bg-gradient-to-b from-blue-100 to-white flex flex-col justify-center items-center text-center p-8 md:p-12">
+    <span className="text-xl md:text-2xl lg:text-3xl text-black">
+      Về Chúng Tôi
+    </span>
+    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mt-4">
+      Sứ mệnh và giá trị của chúng tôi
+    </h1>
+    <p className="mt-4 text-lg md:text-xl lg:text-2xl text-gray-700">
+      Tạo ra một môi trường học tập hiệu quả, hỗ trợ học sinh và phụ huynh trong hành trình chinh phục tri thức.
+    </p>
+  </div>
+  <img
+    src="https://channel.mediacdn.vn/428462621602512896/2023/7/14/photo-1-1689302121228313858070.jpg"
+    alt="Về Chúng Tôi"
+    className="w-full h-64 md:h-80 lg:h-96 object-cover"
+  />
+</div>
+
 
       
 

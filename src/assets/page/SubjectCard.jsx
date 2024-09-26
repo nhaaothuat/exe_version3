@@ -66,9 +66,9 @@ const SubjectCard = () => {
     <div className=" py-14 md:py-24 px-5">
       <div className="space-y-4 p-6 text-center max-w-[600px] mx-auto mb-5">
         <h1 className="uppercase font-semibold text-orange-500">
-          GIA SƯ Ở ĐA DẠNG MÔN HỌC Hãy tìm kiếm gia sư phù hợp với mình!
+        GIA SƯ PHÙ HỢP Ở ĐA DẠNG MÔN HỌC
         </h1>
-        <p className="font-semibold text-3xl">GIA SƯ Ở ĐA DẠNG MÔN HỌC</p>
+        <p className="font-semibold text-3xl">Khám phá gia sư chất lượng cho từng môn học</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">

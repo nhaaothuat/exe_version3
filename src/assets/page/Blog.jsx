@@ -25,16 +25,18 @@ const Blog = () => {
       {/* Banner */}
 
       <div className="relative">
-        <div className="absolute inset-0 bg-white bg-opacity-50 flex flex-col justify-center items-center text-center">
-          <span className="text-lg md:text-xl text-black">Contact Us</span>
-          <h1 className="text-3xl md:text-5xl font-bold text-black">
-            Get Helps & Friendly Support
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-100 to-white flex flex-col justify-center items-center text-center p-8 md:p-12">
+          <span className="text-xl md:text-2xl lg:text-3xl text-black">
+            Chào mừng đến với Blog Gia Sư
+          </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black mt-4">
+            Khám phá kiến thức & kinh nghiệm dạy học hiệu quả
           </h1>
         </div>
         <img
           src="https://channel.mediacdn.vn/428462621602512896/2023/7/14/photo-1-1689302121228313858070.jpg"
-          alt=""
-          className="w-full h-48 md:h-64 object-cover"
+          alt="Blog Gia Sư"
+          className="w-full h-64 md:h-80 lg:h-96 object-cover"
         />
       </div>
 

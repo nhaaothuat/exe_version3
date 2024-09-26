@@ -1,33 +1,53 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import test from "/thucnguyen.jpg";
+import test from "/minion.png";
 // Danh sách các nhân vật
 const people = [
   {
-    name: "Thục Nguyên",
+    name: "Hồng Ngọc",
+    role: "CMO ",
+    picture:
+     test,
+    description: "Tôi khá thích dự án này.",
+    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    facebookURL: "https://www.facebook.com/profile.php?id=100074430396647",
+  },
+  
+  
+  {
+    name: "Yến Nhi",
     role: "Co-Founder",
     picture:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Fossimlabs-minion&psig=AOvVaw1CJGg49Hdcbda_GuSMAkRW&ust=1727272985536000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjzpb7f24gDFQAAAAAdAAAAABAR",
-    description: "A master of elemental magic.",
-    specialAbility: "Fireball",
-    facebookURL: "https://www.facebook.com/tnph226",
+      test,
+    description: "Tôi khá thích dự án này.",
+    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    facebookURL: "https://www.facebook.com/profile.php?id=100074430396647",
   },
   {
     name: "Mai Thảo",
     role: "CEO",
     picture:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Fminion-kevin-pro&psig=AOvVaw1CJGg49Hdcbda_GuSMAkRW&ust=1727272985536000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjzpb7f24gDFQAAAAAdAAAAABAE",
-    description: "A strong and fearless warrior.",
-    specialAbility: "Sword Mastery",
+     test,
+    description: "Tôi khá thích dự án này.",
+    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
     facebookURL: "https://www.facebook.com/hioreooo",
   },
   {
-    name: "Yến Nhi",
+    name: "Thục Nguyên",
     role: "Co-Founder",
     picture:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmytour.vn%2Fvi%2Fblog%2Fbai-viet%2Fanh-dai-dien-minion-tinh-nghich-hai-huoc-de-thuong.html&psig=AOvVaw1CJGg49Hdcbda_GuSMAkRW&ust=1727272985536000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjzpb7f24gDFQAAAAAdAAAAABAJ",
-    description: "A sharp-eyed archer.",
-    specialAbility: "Precision Shot",
+      test,
+    description: "Tôi khá thích dự án này.",
+    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    facebookURL: "https://www.facebook.com/tnph226",
+  },
+  {
+    name: "Minh Thư",
+    role: "CCO",
+    picture:
+    test,
+    description: "Tôi khá thích dự án này.",
+    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
     facebookURL: "https://www.facebook.com/profile.php?id=100074430396647",
   },
 ];
@@ -44,7 +64,7 @@ const TeamSection = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl font-bold mb-12 text-center text-blue-600"
         >
-          Choose Your Character
+          Đội ngũ của chúng tôi
         </motion.h2>
 
         <div className="flex flex-wrap justify-center gap-8">
@@ -59,11 +79,11 @@ const TeamSection = () => {
                   : ""
               }`}
             >
-              <div className="relative overflow-hidden rounded-full h-full w-full">
+              <div className="relative overflow-hidden rounded-full h-full w-full ">
                 <img
                   src={person.picture}
                   alt={person.name}
-                  className="object-cover w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110 rounded-full"
+                  className="object-cover w-full h-full  transition-transform duration-500 ease-in-out transform hover:scale-110 rounded-full"
                 />
               </div>
 
@@ -92,7 +112,7 @@ const TeamSection = () => {
             </p>
             <p className="text-gray-600">{selectedCharacter.description}</p>
             <p className="text-gray-600 mt-2">
-              Special Ability:{" "}
+              
               <span className="text-blue-600">
                 {selectedCharacter.specialAbility}
               </span>

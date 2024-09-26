@@ -45,8 +45,60 @@ const testimonials = [
   },
 ];
 
+const faqs = [
+  {
+    question: "Gia sư có cần bằng cấp không?",
+    answer:
+      "Gia sư cần có ít nhất bằng đại học hoặc đang là sinh viên tại các trường đại học uy tín.",
+  },
+  {
+    question: "Học phí gia sư được tính như thế nào?",
+    answer:
+      "Học phí được tính theo giờ hoặc theo tháng tùy thuộc vào thỏa thuận giữa phụ huynh và gia sư.",
+  },
+  {
+    question: "Có thể học thử trước khi bắt đầu học chính thức không?",
+    answer:
+      "Có, chúng tôi cung cấp buổi học thử miễn phí để đánh giá chất lượng gia sư.",
+  },
+  {
+    question: "Làm sao để đảm bảo chất lượng gia sư?",
+    answer:
+      "Chúng tôi chọn lọc kỹ lưỡng gia sư và luôn theo dõi tiến độ học tập của học sinh.",
+  },
+];
+
+const steps = [
+  {
+    title: "Bước 1: Đăng Ký Tài Khoản",
+    description: "Tạo tài khoản bằng cách điền thông tin cá nhân và xác nhận email của bạn.",
+    image: "/images/signup.png",
+  },
+  {
+    title: "Bước 2: Tìm Kiếm Gia Sư",
+    description: "Duyệt qua danh sách các gia sư và chọn người phù hợp với yêu cầu của bạn.",
+    image: "/images/search-tutor.png",
+  },
+  {
+    title: "Bước 3: Đặt Lịch Học",
+    description: "Liên hệ và thống nhất lịch học với gia sư đã chọn.",
+    image: "/images/schedule.png",
+  },
+  {
+    title: "Bước 4: Bắt Đầu Học Tập",
+    description: "Tham gia buổi học đầu tiên và trải nghiệm phương pháp giảng dạy hiệu quả.",
+    image: "/images/start-learning.png",
+  }
+];
+
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [selected, setSelected] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setSelected(selected === index ? null : index);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,233 +115,115 @@ const Home = () => {
       {/* Banner  */}
 
       <section className="min-h-[90vh] flex items-center justify-center px-4 py-20 bg-gradient-to-b from-blue-100 to-white">
-  <div className="text-center max-w-2xl max-md:max-w-md mx-auto">
-    <div>
-      <div className="font-semibold text-base text-blue-600 mb-8 bg-white rounded-full shadow-lg py-2 px-6 inline-block">
-        <span className="rotate-90 inline-block mr-2">|</span> NỀN TẢNG
-        GIA SƯ DẪN ĐẦU QUY NHƠN
-      </div>
-      <h2 className="text-gray-800 md:text-6xl text-4xl font-extrabold mb-6 md:!leading-[60px]">
-        Đặt lịch học một cách dễ dàng
-      </h2>
-      <p className="mt-6 text-lg text-gray-500 leading-relaxed">
-        Khám phá hành trình học tập thú vị với các gia sư chất lượng, sẵn sàng hỗ trợ bạn mọi lúc. Nâng cao trải nghiệm học tập của bạn ngay hôm nay.
-      </p>
+        <div className="text-center max-w-2xl max-md:max-w-md mx-auto">
+          <div>
+            <div className="font-semibold text-base text-blue-600 mb-8 bg-white rounded-full shadow-lg py-2 px-6 inline-block">
+              <span className="rotate-90 inline-block mr-2">|</span> NỀN TẢNG
+              GIA SƯ DẪN ĐẦU QUY NHƠN
+            </div>
+            <h2 className="text-gray-800 md:text-6xl text-4xl font-extrabold mb-6 md:!leading-[60px]">
+              Đặt lịch học một cách dễ dàng
+            </h2>
+            <p className="mt-6 text-lg text-gray-500 leading-relaxed">
+              Khám phá hành trình học tập thú vị với các gia sư chất lượng, sẵn
+              sàng hỗ trợ bạn mọi lúc. Nâng cao trải nghiệm học tập của bạn ngay
+              hôm nay.
+            </p>
 
-      <div className="mt-12 flex gap-x-6 gap-y-4 justify-center max-sm:flex-col">
-        <Link
-          to="/product"
-          className="w-full sm:w-auto from-blue-100 text-blue-600 font-medium px-8 py-3 rounded-lg shadow-lg hover:bg-blue-100 focus:outline-none focus:ring focus:ring-red-300 transition"
-        >
-          Tìm kiếm 
-        </Link>
+            <div className="mt-12 flex gap-x-6 gap-y-4 justify-center max-sm:flex-col">
+              <Link
+                to="/product"
+                className="w-full sm:w-auto from-blue-100 text-blue-600 font-medium px-8 py-3 rounded-lg shadow-lg border border-blue-600 hover:bg-blue-100 focus:outline-none focus:ring focus:ring-red-300 transition"
+              >
+                Tìm kiếm
+              </Link>
 
-        <Link
-         to="/about"
-          className="w-full sm:w-auto bg-white text-red-600 font-medium px-8 py-3 rounded-lg shadow-lg border border-red-600 hover:text-red-700 hover:border-red-700 focus:outline-none focus:ring focus:ring-red-300 transition"
-        >
-          Tìm hiểu
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
-
+              <Link
+                to="/about"
+                className="w-full sm:w-auto bg-white text-blue-600 font-medium px-8 py-3 rounded-lg shadow-lg border border-blue-600 hover:text-blue-600 hover:border-blue-100 focus:outline-none focus:ring focus:ring-red-300 transition"
+              >
+                Tìm hiểu
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* End */}
 
-      {/* Testiminal */}
-      {/* <div className="container mx-auto px-4 py-8">
-      <h2 className="text-4xl font-bold mb-4">What our customers think</h2>
-      <p className="text-lg text-gray-500 mb-8">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus commodi sint, similique cupiditate possimus suscipit delectus illum eos iure magnam!
-      </p>
-
-      <div className="flex items-start">
-        <div className="w-1/2">
-          <div className="h-2 bg-gray-200 rounded-full mb-8">
-            <div
-              className="h-2 bg-black rounded-full"
-              style={{
-                width: `${((currentIndex + 1) / testimonials.length) * 100}%`
-              }}
-            ></div>
-          </div>
-        </div>
-
-        <div className="w-1/2 pl-8">
-          <div className="bg-white shadow-lg rounded-lg p-8">
-            <img src={testimonials[currentIndex].logo} alt="Logo" className="h-10 mb-4"/>
-            <p className="text-lg italic mb-4">
-            &quot;{testimonials[currentIndex].quote}&quot;
-            </p>
-            <p className="font-semibold">{testimonials[currentIndex].name}</p>
-            <p className="text-gray-500">{testimonials[currentIndex].title}</p>
-          </div>
-        </div>
-      </div>
-    </div> */}
-
-      {/* Card */}
       <SubjectCard />
 
+      {/* Testiminal */}
+      <div className="max-w-3xl mx-auto p-8">
+        <h2 className="text-3xl font-bold text-center mb-8">
+          Câu Hỏi Thường Gặp
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="border border-gray-300 rounded-lg p-4 cursor-pointer"
+              onClick={() => toggleFAQ(index)}
+            >
+              <motion.div className="flex justify-between items-center">
+                <h3 className="text-xl font-medium">{faq.question}</h3>
+                <motion.span
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: selected === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  &#x25BC;
+                </motion.span>
+              </motion.div>
+              {selected === index && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-4"
+                >
+                  <p>{faq.answer}</p>
+                </motion.div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Card */}
+      {/* <div className="max-w-5xl mx-auto p-8">
+      <h2 className="text-4xl font-bold text-center mb-12">Cách Hoạt Động</h2>
+      <div className="space-y-12">
+        {steps.map((step, index) => (
+          <motion.div 
+            key={index} 
+            className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center`}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.3 }}
+          >
+            <motion.img 
+              src={step.image} 
+              alt={step.title}
+              className="w-full md:w-1/2 rounded-lg shadow-lg"
+              whileHover={{ scale: 1.05 }}
+            />
+            <div className={`md:w-1/2 md:mx-8 mt-4 md:mt-0 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+              <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>
+              <p className="text-gray-600">{step.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div> */}
       {/* end */}
 
       {/* Blog */}
 
-      {/* <section className="text-gray-600 body-font overflow-hidden">
-        <div className="container py-24 mx-auto">
-          <div className="-my-8 divide-y-2 divide-gray-100">
-            <div className="py-4 flex flex-wrap md:flex-nowrap">
-              <Link to="/blog">
-                {" "}
-                <article className="flex bg-white transition hover:shadow-xl ">
-                  <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
-                    <time
-                      dateTime="2022-10-10"
-                      className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
-                    >
-                      <span>2022</span>
-                      <span className="w-px flex-1 bg-gray-900/10"></span>
-                      <span>Oct 10</span>
-                    </time>
-                  </div>
-
-                  <div className="hidden sm:block sm:basis-48">
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                      className="aspect-square h-full w-full object-cover"
-                    />
-                  </div>
-
-                  <div className="flex flex-1 flex-col justify-between">
-                    <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-4">
-                      <h3 className="font-bold uppercase text-gray-900">
-                        Gia sư giá rẻ, chất lượng, uy tín tại thành phố Quy Nhơn
-                      </h3>
-
-                      <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                        Gia sư tại nhà có thật sự hiệu quả? Thuê gia sư dạy kèm
-                        cho con, có nên không? Đây là câu hỏi lớn của rất nhiều
-                        các bậc phụ huynh và học sinh bận rộn, không có nhiều
-                        thời gian dành cho con. Trong ...
-                      </p>
-                    </div>
-
-                    <div className="sm:flex sm:items-end sm:justify-end">
-                      <Link
-                        to="/blog"
-                        className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
-                      >
-                        Read Blog
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            </div>
-
-            <div className="py-4 flex flex-wrap md:flex-nowrap">
-              <Link to="/blog">
-                {" "}
-                <article className="flex bg-white transition hover:shadow-xl ">
-                  <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
-                    <time
-                      dateTime="2022-10-10"
-                      className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
-                    >
-                      <span>2022</span>
-                      <span className="w-px flex-1 bg-gray-900/10"></span>
-                      <span>Oct 10</span>
-                    </time>
-                  </div>
-
-                  <div className="hidden sm:block sm:basis-48">
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                      className="aspect-square h-full w-full object-cover"
-                    />
-                  </div>
-
-                  <div className="flex flex-1 flex-col justify-between">
-                    <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-4">
-                      <h3 className="font-bold uppercase text-gray-900">
-                        Cẩm Nang Ôn Thi IELTS - Chiến Lược Đạt Band 7.0+
-                      </h3>
-
-                      <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                        IELTS là một trong những chứng chỉ tiếng Anh phổ biến
-                        nhất trên thế giới, đòi hỏi sự chuẩn bị kỹ lưỡng. Dưới
-                        đây là các chiến lược giúp học viên đạt được band 7.0+
-                        trong kỳ thi IELTS…
-                      </p>
-                    </div>
-
-                    <div className="sm:flex sm:items-end sm:justify-end">
-                      <Link
-                        to="/blog"
-                        className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
-                      >
-                        Read Blog
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            </div>
-            <div className="py-4 flex flex-wrap md:flex-nowrap">
-              <Link to="/blog">
-                {" "}
-                <article className="flex bg-white transition hover:shadow-xl ">
-                  <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
-                    <time
-                      dateTime="2022-10-10"
-                      className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
-                    >
-                      <span>2022</span>
-                      <span className="w-px flex-1 bg-gray-900/10"></span>
-                      <span>Oct 10</span>
-                    </time>
-                  </div>
-
-                  <div className="hidden sm:block sm:basis-48">
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                      className="aspect-square h-full w-full object-cover"
-                    />
-                  </div>
-
-                  <div className="flex flex-1 flex-col justify-between">
-                    <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-4">
-                      <h3 className="font-bold uppercase text-gray-900">
-                        Tài Liệu Vật Lý Lớp 12
-                      </h3>
-
-                      <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                        Hệ Thống Lý Thuyết Và Bài Tập Môn Vật Lý Lớp 12, StarHub
-                        Education chuyên cung cấp tài liệu tham khảo cho Sinh
-                        Viên và Học Sinh tham khảo học tập chất lượng, hiệu quả…
-                      </p>
-                    </div>
-
-                    <div className="sm:flex sm:items-end sm:justify-end">
-                      <Link
-                        to="/blog"
-                        className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
-                      >
-                        Read Blog
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section> */}
+     
 
       {/* End */}
 
