@@ -2,10 +2,7 @@ import React from "react";
 import Feature from "./Feature";
 import test from "/image.png";
 import Testimonial from "./Testimonial";
-import { GrUserExpert } from "react-icons/gr";
-import { MdOutlineAccessTime } from "react-icons/md";
-import { FaBookReader } from "react-icons/fa";
-import { FadeUp } from "../../utility/animation";
+
 import { motion } from "framer-motion";
 
 import TeamSection from "./TeamSection";
@@ -108,7 +105,7 @@ const About = () => {
 
      
 
-      <TeamSection />
+      {/* <TeamSection /> */}
 
       {/* Feedback */}
       <Testimonial />

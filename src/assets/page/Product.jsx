@@ -3,6 +3,7 @@ import numeral from "numeral";
 import React, { useEffect, useRef, useState } from "react";
 import Loading from "../component/Loading/Loading";
 import { Link } from "react-router-dom";
+import test from "/logo2.png"
 // import { Button } from "@/components/ui/button";
 import { IoIosSearch } from "react-icons/io";
 const Product = () => {
@@ -17,7 +18,7 @@ const Product = () => {
         const res = await axios.get(
           "https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/api/Tutor"
         );
-        setProducts(res.data); // Set products data
+        setProducts(res.data); 
         setIsLoading(false);
       } catch (err) {
         console.error(err);
@@ -67,7 +68,7 @@ const Product = () => {
 
         <div className="relative z-10 mt-8 md:mt-0 md:ml-12 flex-shrink-0">
           <img
-            src="https://source.unsplash.com/random/300x300?teacher"
+            src={test}
             alt="Gia Sư Minh Họa"
             className="w-64 h-64 md:w-80 md:h-80 rounded-full shadow-lg object-cover border-4 border-blue-600"
           />

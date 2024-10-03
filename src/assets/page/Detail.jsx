@@ -14,7 +14,7 @@ const Detail = () => {
         `https://starhubapi-enc8fuaqgahsd8dr.eastus-01.azurewebsites.net/api/Tutor/${id}`
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setProduct(res.data);
         setIsLoading(false);
       })
@@ -48,9 +48,9 @@ const Detail = () => {
               {/* User Info */}
               <div className="ml-6">
                 <h2 className="text-2xl font-bold text-gray-800">{product.fullName}</h2>
-                <p className="text-gray-600">{product.education}</p>
-                <p className="text-gray-600">{product.hometown}</p>
-                <p className="text-gray-600">{product.livingAt}</p>
+                <p className="text-gray-600">Giáo dục: {product.education}</p>
+                <p className="text-gray-600">Quê quán:{product.hometown}</p>
+                <p className="text-gray-600">Nơi ở hiện tại: {product.livingAt}</p>
               </div>
             </div>
   

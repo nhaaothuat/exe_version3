@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img from "/contact.jpg";
+// import img from "/contact.jpg";
 import { doc, setDoc } from "firebase/firestore";
 import { data } from "../../../src/utility/firebase.js";
 import { v4 } from "uuid";

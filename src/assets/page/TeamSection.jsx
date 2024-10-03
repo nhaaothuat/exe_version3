@@ -6,10 +6,10 @@ const people = [
   {
     name: "Hồng Ngọc",
     role: "CMO ",
-    picture:
-     test,
-    description: "Tôi khá thích dự án này.",
-    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    picture:""
+     ,
+    description: "Tôi đam mê với định hướng của dự án này và cam kết thúc đẩy sự phát triển mạnh mẽ cho StarHub.",
+    specialAbility: "Với vai trò CMO, tôi mong muốn nâng cao sự hiện diện của thương hiệu StarHub và đóng góp vào thành công liên tục của công ty.",
     facebookURL: "https://www.facebook.com/profile.php?id=100074430396647",
   },
   
@@ -19,8 +19,8 @@ const people = [
     role: "Co-Founder",
     picture:
       test,
-    description: "Tôi khá thích dự án này.",
-    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    description: "Tôi cảm thấy dự án này vô cùng thú vị và cam kết định hình sự thành công trong tương lai của nó.",
+    specialAbility: "Là một trong những người sáng lập, tôi tập trung vào việc thúc đẩy đổi mới và mở rộng tầm ảnh hưởng của StarHub trên thị trường.",
     facebookURL: "https://www.facebook.com/profile.php?id=100074430396647",
   },
   {
@@ -28,8 +28,8 @@ const people = [
     role: "CEO",
     picture:
      test,
-    description: "Tôi khá thích dự án này.",
-    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    description: "Dự án này khiến tôi phấn khích vì nó mang lại tiềm năng lớn cho sự phát triển và đổi mới. Tôi cam kết phát triển chiến lược cho nó.",
+    specialAbility: "Với vai trò CEO, tôi quyết tâm dẫn dắt StarHub vươn tới những tầm cao mới thông qua tầm nhìn và sự lãnh đạo.",
     facebookURL: "https://www.facebook.com/hioreooo",
   },
   {
@@ -37,8 +37,8 @@ const people = [
     role: "Co-Founder",
     picture:
       test,
-    description: "Tôi khá thích dự án này.",
-    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    description: "Tôi rất hào hứng với những khả năng mà dự án này mang lại và hoàn toàn tận tâm với sự phát triển của nó.",
+    specialAbility: "Trong vai trò Co-Founder, tôi hướng tới việc thúc đẩy phát triển và mở rộng StarHub thông qua các chiến lược đổi mới.",
     facebookURL: "https://www.facebook.com/tnph226",
   },
   {
@@ -46,8 +46,8 @@ const people = [
     role: "CCO",
     picture:
     test,
-    description: "Tôi khá thích dự án này.",
-    specialAbility: "Với vị trí này, tôi mong muốn phất triển StarHub hơn nữa.",
+    description: "Tôi rất vui khi được tham gia vào dự án này và cam kết đóng góp vào thành công của nó thông qua sự lãnh đạo vững mạnh và quản lý chiến lược.",
+    specialAbility: "Với vai trò CCO, tôi tập trung vào việc đảm bảo rằng các hoạt động của StarHub diễn ra suôn sẻ và hiệu quả.",
     facebookURL: "https://www.facebook.com/profile.php?id=100074430396647",
   },
 ];

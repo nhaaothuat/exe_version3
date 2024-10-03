@@ -128,7 +128,7 @@ const Tutor = () => {
                 nay!
               </p>
               <p className="text-xl font-semibold text-purple-600 mb-2">
-                📞 Liên hệ ngay: +84 085 342 6516
+                📞 +84: 85 342 6516
               </p>
               <address className="text-gray-600">
                 📌 Địa chỉ: R639+HM2, Khu đô thị mới, Thành phố Qui Nhơn, Bình
