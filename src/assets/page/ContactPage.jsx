@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import { AiOutlineLoading } from "react-icons/ai";
-
+import test from "/logo2.png"
 const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -228,7 +228,7 @@ const ContactPage = () => {
             {/* Hình ảnh bên trái */}
             <div className="w-full md:w-1/2 mb-6 md:mb-0">
               <img
-                src="https://via.placeholder.com/500"
+                src={test}
                 alt="Contact Illustration"
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
