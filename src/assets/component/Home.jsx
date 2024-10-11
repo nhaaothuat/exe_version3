@@ -68,8 +68,6 @@ const faqs = [
   },
 ];
 
-
-
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -202,58 +200,58 @@ const Home = () => {
 
       {/* Blog */}
 
-     
-
       {/* End */}
 
       {/* Testimial */}
       <div className="container mx-auto px-4 py-8">
-  <motion.h2
-    className="text-4xl font-bold mb-4 "
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-  >
-    Khách hàng nhận xét về nền tảng chúng tôi
-  </motion.h2>
-  <motion.p
-    className="text-lg text-gray-500 mb-8 text-center"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.2 }}
-  >
-    {testimonials[currentIndex].description}
-  </motion.p>
+        <motion.h2
+          className="text-4xl font-bold mb-4 "
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Khách hàng nhận xét về nền tảng chúng tôi
+        </motion.h2>
+        <motion.p
+          className="text-lg text-gray-500 mb-8 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {testimonials[currentIndex].description}
+        </motion.p>
 
-  <div className="flex flex-col md:flex-row items-start">
-    <div className="w-full md:w-1/2">
-      <Progress
-        value={((currentIndex + 1) / testimonials.length) * 100}
-        className="bg-gray-200 rounded-full mb-8"
-      />
-    </div>
+        <div className="flex flex-col md:flex-row items-start">
+          <div className="w-full md:w-1/2">
+            <Progress
+              value={((currentIndex + 1) / testimonials.length) * 100}
+              className="bg-gray-200 rounded-full mb-8"
+            />
+          </div>
 
-    <div className="w-full md:w-1/2 pl-0 md:pl-8">
-      <motion.div
-        className="bg-white shadow-lg rounded-lg p-8"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <img
-          src={testimonials[currentIndex].logo}
-          alt="Logo"
-          className="h-10 mb-4"
-        />
-        <p className="text-lg italic mb-4">
-          &quot;{testimonials[currentIndex].quote}&quot;
-        </p>
-        <p className="font-semibold">{testimonials[currentIndex].name}</p>
-        <p className="text-gray-500">{testimonials[currentIndex].title}</p>
-      </motion.div>
-    </div>
-  </div>
-</div>
+          <div className="w-full md:w-1/2 pl-0 md:pl-8">
+            <motion.div
+              className="bg-white shadow-lg rounded-lg p-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src={testimonials[currentIndex].logo}
+                alt="Logo"
+                className="h-10 mb-4"
+              />
+              <p className="text-lg italic mb-4">
+                &quot;{testimonials[currentIndex].quote}&quot;
+              </p>
+              <p className="font-semibold">{testimonials[currentIndex].name}</p>
+              <p className="text-gray-500">
+                {testimonials[currentIndex].title}
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
 
       {/* End */}
 
