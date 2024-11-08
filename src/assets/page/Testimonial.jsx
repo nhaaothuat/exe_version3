@@ -4,6 +4,7 @@ import test1 from '/img1.jpg'
 import test2 from '/img2.jpg'
 import test3 from '/img3.jpg'
 import test4 from '/img4.jpg'
+import test from '/test.jpg'
 const TestimonialsData = [
   {
     id: 1,
@@ -31,10 +32,10 @@ const TestimonialsData = [
   },
   {
     id: 5,
-    name: "Nguyễn Minh Khoa",
-    school: "Trường THPT Quốc Học Quy Nhơn",
+    name: "Nguyễn Tuấn Anh",
+    school: "Trường Đại Học Quy Nhơn",
     text: "Nhờ sự hướng dẫn tận tình, em đã cải thiện rất nhiều trong môn Toán và Lý. Điểm số của em tăng đáng kể chỉ sau vài tháng học. ",
-    img: test4,
+    img: test,
     delay: 1.1,
   },
 ];
