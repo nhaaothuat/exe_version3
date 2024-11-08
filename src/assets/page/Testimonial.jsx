@@ -33,8 +33,8 @@ const TestimonialsData = [
   {
     id: 5,
     name: "Nguyễn Tuấn Anh",
-    school: "Trường Đại Học Quy Nhơn",
-    text: "Nhờ sự hướng dẫn tận tình, em đã cải thiện rất nhiều trong môn Toán và Lý. Điểm số của em tăng đáng kể chỉ sau vài tháng học. ",
+    school: "Giảng viên Trường Đại Học Quy Nhơn",
+    text: "Các em học rất chăm chỉ và có cố gắng. ",
     img: test,
     delay: 1.1,
   },
